@@ -26,6 +26,4 @@ def get():
 	return jsonify({"error": "error"})
 
 if __name__ == '__main__':
-    app.run(debug=True, host='128.237.219.51')
-
-#sudo lsof -i:5000
+    app.run(debug=True)

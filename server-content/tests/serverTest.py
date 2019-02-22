@@ -99,7 +99,6 @@ def enterPortfolioData():
 def viewData(linkedIn):
     return linkedIn
     
-# 
 # @app.route("/viewData", methods=["POST", "GET"])
 # def placeDataInTable ():
 #     ## i dont think we actually need frikin global variables i think it is all stored on the server somehow...
@@ -110,8 +109,6 @@ def viewData(linkedIn):
 #         return (redirect (url_for('')
 #     print (request.get_json())
 #     return jsonify ({request.get_json()})
-#     
-
 
 if __name__ == '__main__':
-    app.run(debug=True, host='128.237.173.66')
+    app.run(debug=True)
