@@ -1,0 +1,260 @@
+<html>
+<header>
+	<title>
+		
+	</title>
+</header>
+<body>
+  <div class = "head" align = "left">
+    <h2>
+      Welcome!
+    </h2>
+  </div>
+  <div class = "side">
+
+
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+    <ul>
+      <li><a href="PrettyLoginPage.html" >Edit My Portfolios</a></li>
+      <li><a href="#news">Upload Resume</a></li>
+      <li><a href="#contact">My Contact</a></li>
+      <li><a href="#about" class = "active">About Summary</a></li>
+    </ul>
+
+  </div>
+
+
+{% for key, value in result%}
+<table border = 0 class = "table" fill = "" style = "color: white" >
+            <tr class = "row">
+               <th class = "head"> {{ key }} </th>
+               <td class = "val"> {{ value }} </td>
+            </tr>
+         {% endfor %}
+</table>
+
+
+
+
+  <div class = "smallBody">
+
+    <div class = "profileTab post">
+      <h1>Skills</h1>
+      <img src=
+      "https://s3-ap-southeast-1.amazonaws.com/images.humanresourcesonline.net/wp-content/uploads/2014/12/AkankashaD-Dec2014-Skills-Shutterstock.jpg" style="width:300px">
+      <br><br>
+
+      <p id = "skills">[Not Added]</p>
+
+    </div>
+
+    <div class ="Github post">
+      <h1>Github</h1>
+      <a href = "https://www.github.com">
+      <img src = "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"style="width:200px;
+       position: relative; left: 50px;">
+     </a>
+      <p id = "github">[Not Added]</p>
+    </div>
+  
+  </div>
+
+  <div class = "smallBody2">
+
+    <div class = "LinkedIn post" > 
+      <h1>LinkedIn</h1>
+      <a href = "https://www.linkedin.com">
+      <img src=
+      "https://pngimg.com/uploads/linkedIn/linkedIn_PNG38.png" style="width:200px; position:relative; left:50px;align-self:center; top: 0px;">
+    </a>
+      <br>
+      <p id = "linkedIn">[Not Added]</p>
+    </div>
+
+    <div class = "Portfolio post"> 
+      <h1>Personal Portfolio</h1>
+      <br>
+      <a href = "https://www.blogger.com/about/?r=1-null_user">
+      <img src = "https://assets.pcmag.com/media/images/435450-how-to-build-a-website.jpg" style = "width:300px;  position:relative;">
+    </a>
+      <br><br>
+       <p id = "personal">[Not Added]</p>
+
+    </div>
+
+  </div>
+
+  <div class = "smallBody3">
+
+    <div class = "Facebook post"> 
+      <h1>Facebook</h1>
+      <a href = "https://www.facebook.com">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/600px-Facebook_logo_%28square%29.png"style = "width:150px;  position:relative; left:80px;top:30px">
+    </a>
+      <br><br><br><br>
+      <p id = "facebook">[Not Added]</p>
+    </div>
+  
+  </div>
+
+
+
+
+
+
+<script>
+  document.getElementById ("personal").innerHTML = document.getElementsByClassName ("row")[3].outerText;
+  document.getElementById ("github").innerHTML = document.getElementsByClassName ("row")[0].outerText;
+  document.getElementById ("linkedIn").innerHTML = document.getElementsByClassName ("row")[2].outerText;
+  document.getElementById ("facebook").innerHTML = document.getElementsByClassName ("row")[1].outerText;
+  document.getElementById ("skills").innerHTML = document.getElementsByClassName ("row")[4].outerText;
+</script>
+
+
+</body>
+</html>
+
+<style>
+
+div.profileTab{
+ position:absolute;
+ margin-top: -730px;
+
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin: -10px;
+  padding-top: 50px;
+  
+  width: 130px;
+  height:100%;
+  background-color: #f1f1f1;
+
+  -moz-box-shadow: 0 0 3px #000;
+  -webkit-box-shadow: 0 0 3px #000;
+  box-shadow: 0 0 3px #000;
+}
+
+li a {
+  position:relative;
+  top:-50px;
+  display: block;
+  width: 98px;
+  background-color: #dddddd;
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  -moz-box-shadow: 0 0 3px #000;
+  -webkit-box-shadow: 0 0 3px #000;
+  box-shadow: 0 0 3px #000;
+}
+
+li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+div.head{
+  background-color: #313840;
+  color: white;
+  margin:-10px;
+  padding:10px;
+  width:100%;
+  height:50px;
+  -moz-box-shadow: 0 0 3px #000;
+  -webkit-box-shadow: 0 0 3px #000;
+  box-shadow: 0 0 3px #000;
+
+
+}
+
+li a.active {
+  background-color: #626263;
+  color: white;
+}
+
+div.side{
+
+  background-color: #f3f3f3;
+  color: white;
+  margin:-7px;
+  margin-top:10px;
+  padding:10px;
+  width:100px;
+  height:100%;
+  -moz-box-shadow: 0 0 3px #000;
+  -webkit-box-shadow: 0 0 3px #000;
+  box-shadow: 0 0 3px #000;
+}
+
+div.smallBody{
+  position:absolute;
+  left:130px;
+  top:68px;
+  width:30%;
+  height:100%;
+  align-items: center;
+
+
+}
+
+
+div.smallBody2{
+  position:absolute;
+  left:560px;
+  top:68px;
+  width:30%;
+  height:100%;
+  align-items: center;
+
+}
+
+
+div.smallBody3{
+  position:absolute;
+  left:990px;
+  top:68px;
+  width:30%;
+  align-items: center;
+  height:100%;
+
+}
+
+div.entries
+{
+
+  position:absolute;
+  left:100px;
+  width:700px;
+  -moz-box-shadow: 0 0 3px #000;
+  -webkit-box-shadow: 0 0 3px #000;
+  box-shadow: 0 0 3px #000;
+}
+
+div.post{
+position:relative;
+align-items: center;
+margin: 40px;
+width:300px;
+height:300px;
+-moz-box-shadow: 0 0 3px #000;
+  -webkit-box-shadow: 0 0 3px #000;
+  box-shadow: 0 0 3px #000;
+  background-color: #fff;
+
+}
+
+h1 {
+
+margin: 5px;
+
+}
+</style>

@@ -1,0 +1,166 @@
+<html>
+<header>
+	<title>
+		Augmented Identity LOL
+	</title>
+</header>
+
+<body bgcolor = "#fff">
+
+	<div class="topnav" style="font-family:Arial;">
+		<a class="active" href="#home">Home</a>
+		<a href="#news">News</a>
+		<a href="#contact">Contact</a>
+		<a href="#about">About</a>
+	</div>
+
+
+	<div class = "back" id = "back">
+		<div class = "loginbox" style="font-family:Arial; font-style:italic;width:350px;height:450px;border:1px solid #e0e0e0; background-color: #f3f3f3" align = "center"> 
+			<img src="logo.png" style="width:300px">
+
+			<form align = "center"style="position:relative;top:-50px;font-family:Arial; font-style:italic;">
+				<input type="text" id="user" value = "Username"><br>
+				<input type="text" id="pass" value = "Password"><br>
+				<br>
+				<button onclick="userData" value="Submit"> Log In!</button>
+			</form>
+		</div>
+	</div>
+	<div class = "bottom">
+	</div>
+
+
+</body>
+
+</html>
+
+
+
+<script>
+
+	function userData(){
+		var user = document.getElementbyID("user");
+		var pass = document.getElementbyID("pass");
+	}
+
+		var fadeinto = true;
+	var slideIndex = 0;
+	carousel();
+
+	function carousel() {
+		var back = document.getElementById("back");
+		slideIndex++;
+		if (slideIndex == 1){
+			
+			back.style.backgroundImage = "url('https://pwnnice.net/images/site55/networking-800x500_c.jpg')";
+			// fadeout();
+		}
+		else if (slideIndex==2){
+			// alert(2);
+			
+			back.style.backgroundImage = "url('https://cdn.uconnectlabs.com/wp-content/uploads/sites/21/2016/07/networking.jpg')";
+		}
+		else if (slideIndex==3){
+			// alert(3);
+			back.style.backgroundImage = "url('https://www.bmmagazine.co.uk/wp/wp-content/uploads/2016/10/shutterstock_356360741-e1477845319336.jpg')";
+			slideIndex = 0;
+		}
+		 setTimeout(carousel, 2000); 
+ // Change image every 2 seconds
+}
+</script>
+
+<style>
+
+
+
+div.back {
+	border: none !important;
+	position:relative;
+	height:750px;
+
+	background-image: url("http://www.zorbital.net/wp-content/uploads/2018/11/image.networking-hero.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	
+	margin:-10px;
+
+
+	 -webkit-transition: background 800ms ease-in 100ms; /* property duration timing-function delay */
+    -moz-transition: background 800ms ease-in 100ms;
+    -o-transition: background 800ms ease-in 100ms;
+    transition: background 800ms ease-in 100ms;
+
+
+}
+
+.button {
+  background-color: #e7e7e7; 
+  color: black;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+div.loginbox{
+	position: absolute; 
+	z-index: 1;
+	-moz-box-shadow: 0 0 3px #000;
+	-webkit-box-shadow: 0 0 3px #000;
+	box-shadow: 0 0 3px #000;
+	background-color:#000;
+	position:relative;
+	size:relative;
+	left: 50px;
+	top: 10%;
+	margin:0 ! important;
+    padding:0 ! important;
+}
+
+div.bottom{	
+border: none !important;
+	position:relative;
+	background-color:#fff;
+	height:150px;
+	margin-left:-10px;
+	margin-right:-10px;
+	-moz-box-shadow: 0 0 3px #000;
+	-webkit-box-shadow: 0 0 3px #000;
+	box-shadow: 0 0 3px #000;
+
+}
+
+.topnav {
+	background-color: #fff;
+	overflow: hidden;
+	-moz-box-shadow: 0 0 10px #000;
+	-webkit-box-shadow: 0 0 10px #000;
+	box-shadow: 0 0 10px #000;
+	position: relative;
+	top:-7px;
+	margin-left:-10px;
+	margin-right:-10px;
+
+}
+
+.topnav a {
+	float: left;
+	color: #000;
+	text-align: center;
+	padding: 16px 20px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.topnav a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+
+</style>
