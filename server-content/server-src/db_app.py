@@ -1,27 +1,49 @@
 from __future__ import print_function
 from flask import Flask, request, redirect, url_for, render_template, Response, jsonify
 from flask_sqlalchemy import SQLAlchemy
-import sys
+import sys, os
 from requests import get
 from requests.exceptions import RequestException
 from contextlib import closing
 from webscrape import *
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
-app.config.from_object('config')
+app.config['WTF_CSRF_ENABLED'] = True
+app.config['SECRET_KEY'] = 'aug-id'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'database.db')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 db = SQLAlchemy(app)
 
-class User(db.Model):
+class Student(db.Model):
     id = db.Column('id', db.Integer, primary_key = True)
-    username = db.Column(db.String(50))
+    userName = db.Column(db.String(50))
     password = db.Column(db.Integer) 
 
-    def __init__(self, username, password):
-        self.username = username
+    def __init__(self, name, userName, password):
+        self.name = name
+        self.userName = userName
         self.password = password
+        self.github = ["None", "None", "None"]
+        self.linkedIn = "None"
+        self.facebook = "None"
+        self.personalWebsite = "None"
+        self.skills = []
+        self.major = "None"
+        self.dict = {}
+        self.updateDict()
+    
+    def updateDict(self):
+        self.dict = {self.userName: [self.name, self.password, self.github,
+                                     self.linkedIn, self.facebook, self.personalWebsite, 
+                                     self.skills, self.major]}
     
     def __repr__(self):
-        return self.password
+        return str(self.password)
+
+
+CURRENT_USER = Student("none", "none", "none")
 
 @app.route('/')
 def index():
@@ -29,35 +51,30 @@ def index():
     
 @app.route("/", methods = ["POST", "GET"])
 def register():
-    fullName = request.form ['fullName']
-    userName = request.form ['user']
-    password = request.form ['pass']
-    confirm = request.form ['confirmPass']
-    if request.form ['button'] == "Register" and fullName != "" and \
+    fullName = request.form['fullName']
+    userName = request.form['user']
+    password = request.form['pass']
+    confirm = request.form['confirmPass']
+    if request.form['button'] == "Register" and fullName != "" and \
                     userName != "" and password != "" and password == confirm:
-        new_user = User(username=userName, password=password)
+        new_user = Student(name=fullName, userName=userName, password=password)
         db.session.add(new_user)
         db.session.commit()
-        print(User.query.all())
+        CURRENT_USER = new_user
+        print(Student.query.all(), file=sys.stderr)
         return redirect("/finishedRegistration")
-    elif request.form ['button'] == "Login":
+    elif request.form['button'] == "Login":
         return redirect("/loginPage")
     else:
-        return redirect ("/")
+        return redirect("/")
     
 @app.route('/tasks', methods=['POST', "GET"])
 def get_data_from_app():
     data = request.get_json()
     name = str(data["name"])
-    for user in User.query.all():
-        if user.userName == name:
-            userDict = {user.userName}
-
-
-
-
-            
-            return jsonify({currentUser: userDict[currentUser]})
+    for user in Student.query.all():
+        if user.name == name:
+            return jsonify({user.name: user.dict})
     return jsonify({'':['', '', ["", "",""], '', '', '', ['', '', '', '', ''], ""]})
         
 @app.route("/loginPage")
@@ -67,17 +84,14 @@ def loginTemplate():
 #login screen, must check if user is in system
 @app.route("/loginPage", methods = ["POST", "GET"])
 def login():
-    global userDict
-    global currentUser
-    userName = request.form ['username']
-    password = request.form ['password']
-    if userName not in userDict:
-        return redirect("/")
-    elif userName in userDict and userDict[userName][1] != password:
-        return redirect("/loginPage")
-    else:
-        currentUser = userName
-        return redirect("/viewPortfolio")
+    for user in Student.query.all():
+        if user.userName == request.form['username']:
+            if user.password == request.form['password']:
+                CURRENT_USER = user
+                return redirect("/viewPortfolio")
+            else:
+                return redirect("/loginPage")
+    return redirect("/")
         
 #redirects the registration page to the finished registration page
 @app.route("/finishedRegistration")
@@ -97,52 +111,26 @@ def enterDataScreen():
 #retrieves the linkes and stores it with users
 @app.route("/enterPortfolioScreen", methods = ["POST", "GET"])
 def enterPortfolioData():
-    personalWebsite = None
-    github = None
-    linkedIn = None
-    facebook = None
-    skills = None
-    major = None
-    global currentUser
-    global userDict
     if request.method == "POST":
-        personalWebsiteLink = request.form ["PersonalWebsite"]
-        githubLink = request.form ["Github"]
-        linkedInLink = request.form ["LinkedIn"]
-        facebookLink = request.form ["Facebook"]
-        skillsList = request.form ["Skills"].split(", ")
-        tmpMajor = request.form ["Major"]
-        if personalWebsiteLink != "enter URL" and personalWebsiteLink != "":
-            personalWebsite = personalWebsiteLink
-        if githubLink != "enter URL" and githubLink != "":
-            github = githubLink
-        if linkedInLink != "enter URL" and linkedInLink != "":
-            linkedIn = linkedInLink
-        if facebookLink != "enter URL" and facebookLink != "":
-            facebook = facebookLink
-        if skillsList != "enter your skills" and skillsList != "":
-            skills = skillsList
-        if tmpMajor != "enter your major" and tmpMajor != "":
-            major = tmpMajor
-        print(request.form, file=sys.stderr)
-        gitInfo = getDetails (github)
+        gitInfo = getDetails(request.form["Github"])
         if gitInfo == None:
-            userDict[currentUser][2][0] = 'None'
-            userDict[currentUser][2][1] = 'None'
+            CURRENT_USER.github[0] = "None"
+            CURRENT_USER.github[1] = "None"
         else:
-            userDict[currentUser][2][0] = gitInfo[0]
-            userDict[currentUser][2][1] = gitInfo[1]
-        userDict[currentUser][2][2] = github
-        userDict[currentUser][3] = facebook
-        userDict[currentUser][4] = linkedIn
-        userDict[currentUser][5] = personalWebsite
-        userDict[currentUser][6] = skills
-        userDict[currentUser][7] = major
-        return render_template("PrettyPortfolioSummary.html", result = tupleList(currentUser, userDict))
-        
+            CURRENT_USER.github[0] = gitInfo[0]
+            CURRENT_USER.github[1] = gitInfo[1]
+        CURRENT_USER.github[2] = request.form["Github"]
+        CURRENT_USER.facebook = request.form["Facebook"]
+        CURRENT_USER.linkedIn = request.form["LinkedIn"]
+        CURRENT_USER.personalWebsite = request.form["PersonalWebsite"]
+        CURRENT_USER.skills = request.form["Skills"].split(", ")
+        CURRENT_USER.major = request.form["Major"]
+        CURRENT_USER.updateDict()
+        return render_template("PrettyPortfolioSummary.html", result=tupleList(CURRENT_USER.userName, CURRENT_USER.dict))
+
 def tupleList(user, dict):
     result = []
-    if userDict[user][2] != None:
+    if dict[user][2] != None:
         result.append(("Github", dict[user][2][2]))
     else:
         result.append(("Github", "None"))
@@ -152,18 +140,15 @@ def tupleList(user, dict):
     result.append(("Skills", dict[user][6]))
     result.append(("Major", dict[user][7]))
     return result
-        
-        
-@app.route("/viewPortfolio")
+
+@app.route("/viewPortfolio", methods=["POST", "GET"])
 def showPortfolio():
-    return render_template("PrettyPortfolioSummary.html", result = tupleList(currentUser, userDict))
+    return render_template("PrettyPortfolioSummary.html")
 
 @app.route("/viewPortfolio", methods=["POST", "GET"])
 def editPortfolioButton():
     return redirect("PrettyPortfolioSummary.html")
 
-
-
 if __name__ == '__main__':
+    db.create_all()
     app.run(debug=True) # host="ip address"
-
