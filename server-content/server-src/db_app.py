@@ -40,8 +40,7 @@ class Student(db.Model):
                                      self.skills, self.major]}
     
     def __repr__(self):
-        return str(self.password)
-
+        return str("Name: " + self.name + " Password: " + self.password)
 
 CURRENT_USER = Student("none", "none", "none")
 
