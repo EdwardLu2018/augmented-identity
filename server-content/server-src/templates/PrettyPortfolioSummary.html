@@ -26,14 +26,14 @@
   </div>
 
 
-{% for key, value in result%}
-<table border = 0 class = "table" fill = "" style = "color: white" >
-            <tr class = "row">
-               <th class = "head"> {{ key }} </th>
-               <td class = "val"> {{ value }} </td>
-            </tr>
-         {% endfor %}
-</table>
+  {% for key, value in result%}
+    <table border = 0 class = "table" fill = "" style = "color: white" >
+                <tr class = "row">
+                  <th class = "head"> {{ key }} </th>
+                  <td class = "val"> {{ value }} </td>
+                </tr>
+    </table>
+  {% endfor %}
 
 
 

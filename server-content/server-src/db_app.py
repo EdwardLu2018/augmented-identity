@@ -60,8 +60,10 @@ def register():
         new_user = Student(name=fullName, userName=userName, password=password)
         db.session.add(new_user)
         db.session.commit()
+        global CURRENT_USER
         CURRENT_USER = new_user
         print(Student.query.all(), file=sys.stderr)
+        print(CURRENT_USER.name)
         return redirect("/finishedRegistration")
     elif request.form['button'] == "Login":
         return redirect("/loginPage")
@@ -87,12 +89,11 @@ def login():
     for user in Student.query.all():
         if user.userName == request.form['username']:
             if user.password == request.form['password']:
+                global CURRENT_USER
                 CURRENT_USER = user
                 return redirect("/viewPortfolio")
-            else:
-                return redirect("/loginPage")
-    return redirect("/")
-        
+    return redirect("/loginPage")
+
 #redirects the registration page to the finished registration page
 @app.route("/finishedRegistration")
 def finishedRegistration():
@@ -112,6 +113,8 @@ def enterDataScreen():
 @app.route("/enterPortfolioScreen", methods = ["POST", "GET"])
 def enterPortfolioData():
     if request.method == "POST":
+        global CURRENT_USER
+        print(CURRENT_USER.name)
         gitInfo = getDetails(request.form["Github"])
         if gitInfo == None:
             CURRENT_USER.github[0] = "None"
@@ -126,6 +129,7 @@ def enterPortfolioData():
         CURRENT_USER.skills = request.form["Skills"].split(", ")
         CURRENT_USER.major = request.form["Major"]
         CURRENT_USER.updateDict()
+        print(CURRENT_USER.dict, file=sys.stderr)
         return render_template("PrettyPortfolioSummary.html", result=tupleList(CURRENT_USER.userName, CURRENT_USER.dict))
 
 def tupleList(user, dict):
