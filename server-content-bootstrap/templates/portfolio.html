@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %} Portfolio {% endblock %}
+{% set active_page = "portfolio" %}
+
+{% block content %}
+    {% if current_user.is_authenticated %}
+        <p style="color:red">
+            {% with errors = get_flashed_messages(category_filter=["error"]) %}
+                {% if errors %}
+                    {%- for message in get_flashed_messages() %}
+                        {{ message }}
+                    {%- endfor %}
+                {% endif %}
+            {% endwith %}
+        </p>
+        <p style="color:green">
+            {% with errors = get_flashed_messages(category_filter=["success"]) %}
+                {% if errors %}
+                    {%- for message in get_flashed_messages() %}
+                        {{ message }}
+                    {%- endfor %}
+                {% endif %}
+            {% endwith %}
+        </p>
+        <div class="form-group">
+            <form action="{{request.path}}" method="POST">
+                <label for="fullname"> Name: </label>
+                <input class="form-control" type="text" name="firstname" value={{ current_user.fullname }} readonly><br>
+                <label for="andrewid"> Andrew ID: </label>
+                <input class="form-control" type="text" name="andrewid" value={{ current_user.andrew_id }} readonly><br>
+                <label for="major"> Major: </label>
+                <input class="form-control" type="text" name="major" placeholder="Major"><br>
+                <label for="github"> GitHub Username (if applicable): </label>
+                <input class="form-control" type="text" name="github" placeholder="GitHub Username"><br>
+                <label for="facebook"> Facebook Username (if applicable): </label>
+                <input class="form-control" type="text" name="facebook" placeholder="Facebook Username"><br>
+                <label for="linkedin"> LinkedIn Username (if applicable): </label>
+                <input class="form-control" type="text" name="linkedin" placeholder="LinkedIn Username"><br>
+                <label for="personal"> Personal Website (if applicable): </label>
+                <input class="form-control" type="text" name="personal" placeholder="Personal Website"><br>
+                <!-- <button type="reset" class="btn btn-primary"> Reset </button> -->
+                <button type="submit" class="btn btn-primary"> Submit </button>
+            </form>
+        </div>
+    {% endif %}
+{% endblock %}

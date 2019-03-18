@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} Register {% endblock %}
+{% set active_page = "register" %}
+
+{% block content %}
+	<p style="color:red">
+		{% with errors = get_flashed_messages(category_filter=["error"]) %}
+			{% if errors %}
+				{%- for message in get_flashed_messages() %}
+					{{ message }}
+				{%- endfor %}
+			{% endif %}
+		{% endwith %}
+	</p>
+	<form action="{{request.path}}" method="POST">
+		<div class="form-group">
+			<label for="andrewid"> First Name: </label>
+			<input class="form-control" type="text" name="firstname" placeholder="First Name (as it appears on ID)"><br>
+			<label for="lastname"> Last Name: </label>
+			<input class="form-control" type="text" name="lastname" placeholder="Last Name (as it appears on ID)"><br>
+			<label for="andrewid"> Andrew ID: </label>
+			<input class="form-control" type="text" name="andrewid" placeholder="Andrew ID"><br>
+			<label for="password"> Password: </label>
+			<input class="form-control" type="password" name="password" placeholder="Password"><br>
+			<label for="password"> Confirm Password: </label>
+			<input class="form-control" type="password" name="confirmation" placeholder="Confirm Password"><br>
+			<button type="submit" class="btn btn-primary"> Register </button>
+		</div>
+	</form>
+{% endblock %}
