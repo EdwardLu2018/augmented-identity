@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="augmented_identity" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eF2-a4-hCw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="pDH-SS-sNo" appends="YES" id="Zzs-25-xPz"/>
+                                    <outletCollection property="gestureRecognizers" destination="2rh-Lk-aIR" appends="YES" id="16j-lU-JPw"/>
+                                </connections>
+                            </arscnView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hold ID In Front Of Camera &amp; Press" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSa-DS-IYv">
+                                <rect key="frame" x="37.5" y="37" width="300" height="25"/>
+                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="tXW-H3-kRV"/>
+                                    <constraint firstAttribute="height" constant="25" id="vcZ-pT-TkF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jSa-DS-IYv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2KF-at-X3E"/>
+                            <constraint firstItem="eF2-a4-hCw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="EJ2-9E-8eT"/>
+                            <constraint firstItem="jSa-DS-IYv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="17" id="Khj-fn-iC4"/>
+                            <constraint firstItem="eF2-a4-hCw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VZV-2o-KoC"/>
+                            <constraint firstItem="eF2-a4-hCw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pXf-WP-py0"/>
+                            <constraint firstItem="eF2-a4-hCw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="sEN-fd-1tW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="directionsLabel" destination="jSa-DS-IYv" id="hql-75-MH7"/>
+                        <outlet property="sceneView" destination="eF2-a4-hCw" id="sR7-xU-Xei"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="2rh-Lk-aIR">
+                    <connections>
+                        <action selector="longPress:" destination="BYZ-38-t0r" id="wr2-7a-7aU"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="pDH-SS-sNo"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
