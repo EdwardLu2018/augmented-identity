@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="slideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="augmented_identity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                                     <constraint firstAttribute="height" constant="50" id="OP3-d8-Ske"/>
                                     <constraint firstAttribute="width" constant="375" id="TQw-AV-yCO"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 </state>
@@ -45,7 +45,7 @@
                                     <constraint firstAttribute="height" constant="50" id="gkL-Jt-FH8"/>
                                     <constraint firstAttribute="width" constant="375" id="sYP-rh-igT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 </state>
@@ -94,13 +94,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K8o-Rs-vJe" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="87.5" y="70" width="200" height="40"/>
+                                <rect key="frame" x="87.5" y="70" width="200" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="0GF-AF-P3N"/>
-                                    <constraint firstAttribute="height" constant="40" id="Zq8-Fb-rbP"/>
+                                    <constraint firstAttribute="height" constant="55" id="EcA-kj-Ci9"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
@@ -115,13 +115,13 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3KX-bO-BuT" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="87.5" y="130" width="200" height="40"/>
+                                <rect key="frame" x="87.5" y="145" width="200" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Abz-up-o74"/>
-                                    <constraint firstAttribute="height" constant="40" id="Dd2-PM-7ZH"/>
+                                    <constraint firstAttribute="height" constant="55" id="euw-cV-aF9"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
@@ -136,13 +136,13 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SaA-To-n1B" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="87.5" y="190" width="200" height="40"/>
+                                <rect key="frame" x="87.5" y="220" width="200" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="4HF-IH-sh7"/>
-                                    <constraint firstAttribute="height" constant="40" id="6IV-qt-avb"/>
+                                    <constraint firstAttribute="height" constant="55" id="Mha-dG-laR"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
@@ -157,13 +157,13 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWh-yu-VXw">
-                                <rect key="frame" x="87.5" y="313" width="200" height="40"/>
+                                <rect key="frame" x="87.5" y="358" width="200" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Fpr-AO-bww"/>
                                     <constraint firstAttribute="width" constant="200" id="cpU-QK-94a"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -198,7 +198,7 @@
         <!--Container View Controller-->
         <scene sceneID="XmY-Xc-jTg">
             <objects>
-                <viewController id="IkM-eo-y3Q" customClass="ContainerViewController" customModule="slideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IkM-eo-y3Q" customClass="ContainerViewController" customModule="augmented_identity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a5h-91-j2Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,13 +239,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A2f-hr-S2F" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="87.5" y="120" width="200" height="40"/>
+                                <rect key="frame" x="87.5" y="120" width="200" height="55"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="62h-1t-C9d"/>
                                     <constraint firstAttribute="width" constant="200" id="Ahr-gW-79E"/>
-                                    <constraint firstAttribute="height" constant="40" id="qL3-Gj-Y1J"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
@@ -260,13 +260,13 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3PU-8w-3He" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="87.5" y="200" width="200" height="40"/>
+                                <rect key="frame" x="87.5" y="215" width="200" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="d4P-Kx-tZT"/>
+                                    <constraint firstAttribute="height" constant="55" id="U4g-Er-607"/>
                                     <constraint firstAttribute="width" constant="200" id="gB7-Fx-9OG"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
@@ -281,13 +281,13 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeV-hY-BR2">
-                                <rect key="frame" x="87.5" y="315" width="200" height="40"/>
+                                <rect key="frame" x="87.5" y="345" width="200" height="40"/>
                                 <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="B9j-vK-COC"/>
                                     <constraint firstAttribute="height" constant="40" id="maG-Yn-upR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -321,7 +321,7 @@
         <!--Left View Controller-->
         <scene sceneID="45o-HV-GCr">
             <objects>
-                <viewController storyboardIdentifier="left" id="1Aa-dp-M56" customClass="LeftViewController" customModule="slideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="left" id="1Aa-dp-M56" customClass="LeftViewController" customModule="augmented_identity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oe3-EI-mqx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -343,7 +343,7 @@
         <!--Middle View Controller-->
         <scene sceneID="EUc-wX-kmT">
             <objects>
-                <viewController storyboardIdentifier="middle" id="ADq-8v-W4E" customClass="MiddleViewController" customModule="slideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="middle" id="ADq-8v-W4E" customClass="MiddleViewController" customModule="augmented_identity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="otM-ee-aSa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -401,7 +401,7 @@
         <!--Right View Controller-->
         <scene sceneID="eif-Oh-aZc">
             <objects>
-                <viewController storyboardIdentifier="right" id="rme-HF-tZq" customClass="RightViewController" customModule="slideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="right" id="rme-HF-tZq" customClass="RightViewController" customModule="augmented_identity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1C5-8L-euI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -430,6 +430,6 @@
         <image name="logo" width="294" height="284"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="h92-6m-t1S"/>
+        <segue reference="EFb-4c-A0e"/>
     </inferredMetricsTieBreakers>
 </document>
