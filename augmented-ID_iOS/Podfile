@@ -9,6 +9,7 @@ target 'augmented-identity' do
   # Pods for TextTest
   pod 'TextFieldEffects'
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
   pod 'Firebase/MLVision'
   pod 'Firebase/MLVisionTextModel'
   pod 'Alamofire', '~> 4.7'
