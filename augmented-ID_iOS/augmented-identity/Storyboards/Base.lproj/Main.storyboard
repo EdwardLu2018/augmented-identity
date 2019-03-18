@@ -176,24 +176,23 @@
                                     <segue destination="IkM-eo-y3Q" kind="show" id="EFb-4c-A0e"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFk-sI-6io">
-                                <rect key="frame" x="15" y="20" width="20" height="20"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFk-sI-6io">
+                                <rect key="frame" x="20" y="40" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="EMw-Vv-gN7"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="rkl-Bs-7DY"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="uUG-gg-wSI"/>
                                     <constraint firstAttribute="height" constant="20" id="xPO-df-QL8"/>
                                 </constraints>
                                 <state key="normal" image="back-icon"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="XPa-eZ-CAR"/>
+                                    <segue destination="BYZ-38-t0r" kind="showDetail" id="XPa-eZ-CAR"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="VFk-sI-6io" firstAttribute="leading" secondItem="PXa-wh-FaK" secondAttribute="leading" constant="15" id="12l-cG-6jH"/>
+                            <constraint firstItem="VFk-sI-6io" firstAttribute="top" secondItem="PXa-wh-FaK" secondAttribute="top" constant="20" id="75V-OQ-863"/>
                             <constraint firstItem="DWh-yu-VXw" firstAttribute="top" secondItem="SaA-To-n1B" secondAttribute="bottom" constant="83" id="E1F-FH-Rq1"/>
+                            <constraint firstItem="VFk-sI-6io" firstAttribute="leading" secondItem="PXa-wh-FaK" secondAttribute="leading" constant="20" id="FKr-8C-gaC"/>
                             <constraint firstItem="SaA-To-n1B" firstAttribute="centerX" secondItem="PXa-wh-FaK" secondAttribute="centerX" id="Feu-jo-mBS"/>
                             <constraint firstItem="3KX-bO-BuT" firstAttribute="top" secondItem="K8o-Rs-vJe" secondAttribute="bottom" constant="20" id="Qsg-VV-52h"/>
                             <constraint firstItem="K8o-Rs-vJe" firstAttribute="top" secondItem="PXa-wh-FaK" secondAttribute="top" constant="50" id="egv-QT-tj9"/>
@@ -322,7 +321,7 @@
                                 </constraints>
                                 <state key="normal" image="back-icon"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="18d-Nz-897"/>
+                                    <segue destination="BYZ-38-t0r" kind="showDetail" id="18d-Nz-897"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -458,7 +457,7 @@
         <image name="logo" width="294" height="284"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EFb-4c-A0e"/>
-        <segue reference="XPa-eZ-CAR"/>
+        <segue reference="h92-6m-t1S"/>
+        <segue reference="18d-Nz-897"/>
     </inferredMetricsTieBreakers>
 </document>
