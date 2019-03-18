@@ -31,7 +31,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="0"/>
+                                        <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -51,7 +51,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="0"/>
+                                        <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -94,10 +94,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K8o-Rs-vJe" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="87.5" y="70" width="200" height="55"/>
+                                <rect key="frame" x="37.5" y="70" width="300" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="0GF-AF-P3N"/>
                                     <constraint firstAttribute="height" constant="55" id="EcA-kj-Ci9"/>
+                                    <constraint firstAttribute="width" constant="300" id="HbJ-KP-NPb"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
@@ -115,9 +115,9 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3KX-bO-BuT" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="87.5" y="145" width="200" height="55"/>
+                                <rect key="frame" x="37.5" y="145" width="300" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Abz-up-o74"/>
+                                    <constraint firstAttribute="width" constant="300" id="GjM-VO-Xjd"/>
                                     <constraint firstAttribute="height" constant="55" id="euw-cV-aF9"/>
                                 </constraints>
                                 <nil key="textColor"/>
@@ -136,9 +136,9 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SaA-To-n1B" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="87.5" y="220" width="200" height="55"/>
+                                <rect key="frame" x="37.5" y="220" width="300" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="4HF-IH-sh7"/>
+                                    <constraint firstAttribute="width" constant="300" id="AmD-Y9-wGo"/>
                                     <constraint firstAttribute="height" constant="55" id="Mha-dG-laR"/>
                                 </constraints>
                                 <nil key="textColor"/>
@@ -239,10 +239,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A2f-hr-S2F" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="87.5" y="120" width="200" height="55"/>
+                                <rect key="frame" x="37.5" y="120" width="300" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="62h-1t-C9d"/>
-                                    <constraint firstAttribute="width" constant="200" id="Ahr-gW-79E"/>
+                                    <constraint firstAttribute="width" constant="300" id="Nks-pD-Ben"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
@@ -260,10 +260,10 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3PU-8w-3He" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="87.5" y="215" width="200" height="55"/>
+                                <rect key="frame" x="37.5" y="215" width="300" height="55"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="HcJ-RR-HYB"/>
                                     <constraint firstAttribute="height" constant="55" id="U4g-Er-607"/>
-                                    <constraint firstAttribute="width" constant="200" id="gB7-Fx-9OG"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
@@ -363,7 +363,7 @@
                                     <constraint firstAttribute="width" constant="300" id="5qa-Jx-DI1"/>
                                     <constraint firstAttribute="height" constant="25" id="XVu-ME-mTm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
