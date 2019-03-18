@@ -85,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="-738.39999999999998" y="166.8665667166417"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="Qb8-vA-uP1">
             <objects>
-                <viewController id="Eh4-DR-rO7" sceneMemberID="viewController">
+                <viewController id="Eh4-DR-rO7" customClass="SignUpViewController" customModule="augmented_identity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Euj-x2-zxh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -173,6 +173,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="signUpAction:" destination="Eh4-DR-rO7" eventType="touchUpInside" id="wqg-Q0-AJG"/>
                                     <segue destination="IkM-eo-y3Q" kind="show" id="EFb-4c-A0e"/>
                                 </connections>
                             </button>
@@ -203,6 +204,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PXa-wh-FaK"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmation" destination="SaA-To-n1B" id="WjK-2X-G8f"/>
+                        <outlet property="email" destination="K8o-Rs-vJe" id="kqb-2l-Gls"/>
+                        <outlet property="password" destination="3KX-bO-BuT" id="SeT-Pc-Nbq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vt7-kJ-QKE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -217,17 +223,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duA-Rp-kTN">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="h5E-zq-LuX" appends="YES" id="W3L-uR-57s"/>
                                 </connections>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gei-ds-HjY">
+                                <rect key="frame" x="16" y="20" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="users"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWc-Jc-Gsw">
+                                <rect key="frame" x="334" y="20" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="pencil"/>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="duA-Rp-kTN" firstAttribute="top" secondItem="a5h-91-j2Z" secondAttribute="top" constant="50" id="5fA-XO-dgU"/>
                             <constraint firstItem="duA-Rp-kTN" firstAttribute="bottom" secondItem="Yv6-aZ-DOl" secondAttribute="bottom" id="NLP-Sm-8vt"/>
-                            <constraint firstItem="duA-Rp-kTN" firstAttribute="top" secondItem="a5h-91-j2Z" secondAttribute="top" id="Os4-Kv-7id"/>
                             <constraint firstItem="duA-Rp-kTN" firstAttribute="trailing" secondItem="Yv6-aZ-DOl" secondAttribute="trailing" id="THX-Bm-s8f"/>
                             <constraint firstItem="duA-Rp-kTN" firstAttribute="leading" secondItem="Yv6-aZ-DOl" secondAttribute="leading" id="beK-JK-FaC"/>
                         </constraints>
@@ -453,11 +469,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back-icon" width="50" height="50"/>
+        <image name="back-icon" width="100" height="100"/>
         <image name="logo" width="294" height="284"/>
+        <image name="pencil" width="26" height="26"/>
+        <image name="users" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="h92-6m-t1S"/>
-        <segue reference="18d-Nz-897"/>
+        <segue reference="EFb-4c-A0e"/>
+        <segue reference="XPa-eZ-CAR"/>
     </inferredMetricsTieBreakers>
 </document>
