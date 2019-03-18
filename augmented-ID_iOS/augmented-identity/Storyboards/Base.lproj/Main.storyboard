@@ -176,9 +176,23 @@
                                     <segue destination="IkM-eo-y3Q" kind="show" id="EFb-4c-A0e"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFk-sI-6io">
+                                <rect key="frame" x="15" y="20" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="EMw-Vv-gN7"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="rkl-Bs-7DY"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="uUG-gg-wSI"/>
+                                    <constraint firstAttribute="height" constant="20" id="xPO-df-QL8"/>
+                                </constraints>
+                                <state key="normal" image="back-icon"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="XPa-eZ-CAR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="VFk-sI-6io" firstAttribute="leading" secondItem="PXa-wh-FaK" secondAttribute="leading" constant="15" id="12l-cG-6jH"/>
                             <constraint firstItem="DWh-yu-VXw" firstAttribute="top" secondItem="SaA-To-n1B" secondAttribute="bottom" constant="83" id="E1F-FH-Rq1"/>
                             <constraint firstItem="SaA-To-n1B" firstAttribute="centerX" secondItem="PXa-wh-FaK" secondAttribute="centerX" id="Feu-jo-mBS"/>
                             <constraint firstItem="3KX-bO-BuT" firstAttribute="top" secondItem="K8o-Rs-vJe" secondAttribute="bottom" constant="20" id="Qsg-VV-52h"/>
@@ -300,10 +314,23 @@
                                     <segue destination="IkM-eo-y3Q" kind="show" id="h92-6m-t1S"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEb-1V-Wdc">
+                                <rect key="frame" x="15" y="20" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="IAt-gb-u2a"/>
+                                    <constraint firstAttribute="width" constant="20" id="TQK-C6-pB2"/>
+                                </constraints>
+                                <state key="normal" image="back-icon"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="18d-Nz-897"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qeV-hY-BR2" firstAttribute="centerX" secondItem="sc3-Ou-Mo1" secondAttribute="centerX" id="8O5-SE-Ume"/>
+                            <constraint firstItem="dEb-1V-Wdc" firstAttribute="leading" secondItem="sc3-Ou-Mo1" secondAttribute="leading" constant="15" id="BXV-L7-iqN"/>
+                            <constraint firstItem="dEb-1V-Wdc" firstAttribute="top" secondItem="sc3-Ou-Mo1" secondAttribute="top" id="HYo-Ac-dq1"/>
                             <constraint firstItem="A2f-hr-S2F" firstAttribute="centerX" secondItem="sc3-Ou-Mo1" secondAttribute="centerX" id="OrE-sK-tIq"/>
                             <constraint firstItem="3PU-8w-3He" firstAttribute="centerX" secondItem="sc3-Ou-Mo1" secondAttribute="centerX" id="aL4-7n-rWt"/>
                             <constraint firstItem="3PU-8w-3He" firstAttribute="top" secondItem="A2f-hr-S2F" secondAttribute="bottom" constant="40" id="h1H-wd-To5"/>
@@ -316,7 +343,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="br3-Wi-9IG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1079" y="-336"/>
+            <point key="canvasLocation" x="1077.5999999999999" y="-336.88155922038982"/>
         </scene>
         <!--Left View Controller-->
         <scene sceneID="45o-HV-GCr">
@@ -427,9 +454,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back-icon" width="50" height="50"/>
         <image name="logo" width="294" height="284"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="EFb-4c-A0e"/>
+        <segue reference="XPa-eZ-CAR"/>
     </inferredMetricsTieBreakers>
 </document>
