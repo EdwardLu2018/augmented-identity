@@ -7,22 +7,21 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
 
-    @IBOutlet weak var email: HoshiTextField!
-    @IBOutlet weak var password: HoshiTextField!
-    @IBOutlet weak var confirmation: HoshiTextField!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var confirmation: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
-    
 
     @IBAction func signUpAction(_ sender: Any) {
         if password.text != confirmation.text {
-            let alertController = UIAlertController(title: "Passwords Do Not Match", message: "Please re-type password", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Passwords Do Not Match", message: "Please Try Again", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             
@@ -32,9 +31,9 @@ class SignUpViewController: UIViewController {
         else {
             Auth.auth().createUser(withEmail: email.text!, password: password.text!){ (user, error) in
                 if error == nil {
-                    self.performSegue(withIdentifier: "signupToHome", sender: self)
+                    self.performSegue(withIdentifier: "fromSignUpToMain", sender: self)
                 }
-                else{
+                else {
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     

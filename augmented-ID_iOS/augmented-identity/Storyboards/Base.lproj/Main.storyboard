@@ -80,6 +80,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="las-Xn-8MW"/>
+                    <connections>
+                        <segue destination="IkM-eo-y3Q" kind="show" identifier="alreadyLoggedIn" animates="NO" id="PFg-UT-Ubr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -122,7 +125,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                         <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -143,7 +146,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                         <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -174,7 +177,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signUpAction:" destination="Eh4-DR-rO7" eventType="touchUpInside" id="wqg-Q0-AJG"/>
-                                    <segue destination="IkM-eo-y3Q" kind="show" id="EFb-4c-A0e"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFk-sI-6io">
@@ -208,6 +210,7 @@
                         <outlet property="confirmation" destination="SaA-To-n1B" id="WjK-2X-G8f"/>
                         <outlet property="email" destination="K8o-Rs-vJe" id="kqb-2l-Gls"/>
                         <outlet property="password" destination="3KX-bO-BuT" id="SeT-Pc-Nbq"/>
+                        <segue destination="IkM-eo-y3Q" kind="show" identifier="fromSignUpToMain" id="Dqn-Hf-iP9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vt7-kJ-QKE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -223,26 +226,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duA-Rp-kTN">
-                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="h5E-zq-LuX" appends="YES" id="W3L-uR-57s"/>
                                 </connections>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gei-ds-HjY">
-                                <rect key="frame" x="16" y="20" width="25" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="users"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWc-Jc-Gsw">
-                                <rect key="frame" x="334" y="20" width="25" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="pencil"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="duA-Rp-kTN" firstAttribute="top" secondItem="a5h-91-j2Z" secondAttribute="top" constant="50" id="5fA-XO-dgU"/>
+                            <constraint firstItem="duA-Rp-kTN" firstAttribute="top" secondItem="a5h-91-j2Z" secondAttribute="top" id="Gmg-ga-iPv"/>
                             <constraint firstItem="duA-Rp-kTN" firstAttribute="bottom" secondItem="Yv6-aZ-DOl" secondAttribute="bottom" id="NLP-Sm-8vt"/>
                             <constraint firstItem="duA-Rp-kTN" firstAttribute="trailing" secondItem="Yv6-aZ-DOl" secondAttribute="trailing" id="THX-Bm-s8f"/>
                             <constraint firstItem="duA-Rp-kTN" firstAttribute="leading" secondItem="Yv6-aZ-DOl" secondAttribute="leading" id="beK-JK-FaC"/>
@@ -259,15 +252,15 @@
             </objects>
             <point key="canvasLocation" x="3056.8000000000002" y="166.8665667166417"/>
         </scene>
-        <!--View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="Ng8-u3-Ec1">
             <objects>
-                <viewController id="Iym-Co-da0" sceneMemberID="viewController">
+                <viewController id="Iym-Co-da0" customClass="LogInViewController" customModule="augmented_identity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sma-kK-uhe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A2f-hr-S2F" customClass="HoshiTextField" customModule="TextFieldEffects">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A2f-hr-S2F" customClass="HoshiTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="37.5" y="120" width="300" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="62h-1t-C9d"/>
@@ -296,7 +289,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                         <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -326,7 +319,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="IkM-eo-y3Q" kind="show" id="h92-6m-t1S"/>
+                                    <action selector="logInAction:" destination="Iym-Co-da0" eventType="touchUpInside" id="TVb-Dj-LOT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEb-1V-Wdc">
@@ -355,6 +348,11 @@
                         <viewLayoutGuide key="safeArea" id="sc3-Ou-Mo1"/>
                     </view>
                     <navigationItem key="navigationItem" id="FZL-vl-tS6"/>
+                    <connections>
+                        <outlet property="email" destination="A2f-hr-S2F" id="rGn-C3-W7j"/>
+                        <outlet property="password" destination="3PU-8w-3He" id="pPW-e1-iMq"/>
+                        <segue destination="IkM-eo-y3Q" kind="show" identifier="fromLogInToMain" id="pKW-xw-HhI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="br3-Wi-9IG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -471,11 +469,9 @@
     <resources>
         <image name="back-icon" width="100" height="100"/>
         <image name="logo" width="294" height="284"/>
-        <image name="pencil" width="26" height="26"/>
-        <image name="users" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EFb-4c-A0e"/>
+        <segue reference="Dqn-Hf-iP9"/>
         <segue reference="XPa-eZ-CAR"/>
     </inferredMetricsTieBreakers>
 </document>
