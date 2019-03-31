@@ -607,6 +607,9 @@
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="firstNameDidChanged:" destination="rme-HF-tZq" eventType="editingChanged" id="4EY-lZ-cfV"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -630,6 +633,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rzX-Y7-2i5"/>
                     </view>
+                    <connections>
+                        <outlet property="facebookTextField" destination="xK8-Qi-KI9" id="iRQ-Bo-vhc"/>
+                        <outlet property="firstNameTextField" destination="X5g-H1-gDM" id="z7Z-9D-h86"/>
+                        <outlet property="githubTextField" destination="c1s-Hg-0GW" id="suT-Wb-cj4"/>
+                        <outlet property="lastNameTextField" destination="Tg3-hP-VBa" id="geO-6j-dhH"/>
+                        <outlet property="linkedInTextField" destination="JVF-7h-6Jb" id="LTn-AK-zfV"/>
+                        <outlet property="majortextField" destination="OZu-iN-VlV" id="BV4-r9-Sp6"/>
+                        <outlet property="personalTextField" destination="la3-Qk-YWz" id="Zx4-lJ-hft"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SgW-8L-FII" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
