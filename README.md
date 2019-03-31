@@ -4,6 +4,8 @@ Check out our Devpost: https://devpost.com/software/augmented-identity
 
 [![image link](https://github.com/EdwardLu2018/augmented-identity/blob/master/logo/logo.png)](https://www.youtube.com/watch?v=DOVoh9fPK0s)
 
-![sign up gif](gifs/sign-up.gif | width=100)
+## Sign Up functionality with Firebase Auth
+![sign up gif](gifs/sign-up.gif)
 
-![edit profile gif](gifs/edit-profile.gif | width=100)
+## Edit Portfolio saved on Firebase
+![edit Portfolio gif](gifs/edit-portfolio.gif)
