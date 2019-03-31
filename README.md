@@ -3,7 +3,7 @@
 Check out our Devpost: https://devpost.com/software/augmented-identity
 
 <a href="https://www.youtube.com/watch?v=DOVoh9fPK0s">
-  <img src="https://github.com/EdwardLu2018/augmented-identity/blob/master/logo/logo.png" alt="image link" width="500" height="500">
+  <img src="https://github.com/EdwardLu2018/augmented-identity/blob/master/logo/logo.png" alt="image link" width="600" height="600">
 </a>
 
 ## Sign Up Functionality with Firebase Authentication
