@@ -10,6 +10,7 @@ target 'augmented-identity' do
   pod 'TextFieldEffects'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
   pod 'Firebase/MLVision'
   pod 'Firebase/MLVisionTextModel'
   pod 'Alamofire', '~> 4.7'
