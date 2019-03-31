@@ -34,7 +34,7 @@ class RightViewController: UIViewController, UITextFieldDelegate {
             self.githubTextField.text = value?["github"] as? String ?? "N/A"
             self.linkedInTextField.text = value?["linkedIn"] as? String ?? "N/A"
             self.facebookTextField.text = value?["facebook"] as? String ?? "N/A"
-            self.personalTextField.text = value?["personal"] as? String ?? "N/A"
+            self.personalTextField.text = value?["personalSite"] as? String ?? "N/A"
         }) { (error) in
             print(error.localizedDescription)
         }
