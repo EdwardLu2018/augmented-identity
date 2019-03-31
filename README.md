@@ -4,8 +4,8 @@ Check out our Devpost: https://devpost.com/software/augmented-identity
 
 [![image link](https://github.com/EdwardLu2018/augmented-identity/blob/master/logo/logo.png)](https://www.youtube.com/watch?v=DOVoh9fPK0s)
 
-## Sign Up functionality with Firebase Auth
+## Sign Up Functionality with Firebase Authentication
 ![sign up gif](gifs/sign-up.gif)
 
-## Edit Portfolio saved on Firebase
+## Edit Portfolio and Save it on Firebase's Real Time Database
 ![edit Portfolio gif](gifs/edit-portfolio.gif)
