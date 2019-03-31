@@ -2,7 +2,7 @@
 
 Check out our Devpost: https://devpost.com/software/augmented-identity
 
-<img src="https://github.com/EdwardLu2018/augmented-identity/blob/master/logo/logo.png" alt="image link" width="250" height="250">
+<img src="https://github.com/EdwardLu2018/augmented-identity/blob/master/logo/logo.png" alt="image link" width="300" height="300">
 
 <a href="https://www.youtube.com/watch?v=DOVoh9fPK0s">
   <img src="http://i.freegifmaker.me/1/5/5/4/0/0/15540080862598766.gif?1554008098" alt="AR Content" width="600">
