@@ -25,14 +25,6 @@ class RightViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.firstNameTextField.delegate = self
-        self.lastNameTextField.delegate = self
-        self.majorTextField.delegate = self
-        self.githubTextField.delegate = self
-        self.linkedInTextField.delegate = self
-        self.facebookTextField.delegate = self
-        self.personalTextField.delegate = self
-        
         self.ref = Database.database().reference()
         self.ref.child("users").child(self.userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
@@ -47,7 +39,13 @@ class RightViewController: UIViewController, UITextFieldDelegate {
             print(error.localizedDescription)
         }
         
-        self.firstNameTextField.text = "Edward Lu"
+        self.firstNameTextField.delegate = self
+        self.lastNameTextField.delegate = self
+        self.majorTextField.delegate = self
+        self.githubTextField.delegate = self
+        self.linkedInTextField.delegate = self
+        self.facebookTextField.delegate = self
+        self.personalTextField.delegate = self
     }
     
     @IBAction func firstNameEditingChanged(_ sender: Any) {
