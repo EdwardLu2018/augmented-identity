@@ -16,8 +16,8 @@ class ViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
-        if Auth.auth().currentUser != nil {
-            self.performSegue(withIdentifier: "alreadyLoggedIn", sender: nil)
-        }
+//        if Auth.auth().currentUser != nil {
+//            self.performSegue(withIdentifier: "alreadyLoggedIn", sender: nil)
+//        }
     }
 }
