@@ -13,5 +13,4 @@ target 'augmented-identity' do
   pod 'Firebase/Database'
   pod 'Firebase/MLVision'
   pod 'Firebase/MLVisionTextModel'
-  pod 'Alamofire', '~> 4.7'
 end
