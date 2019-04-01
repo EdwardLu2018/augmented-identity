@@ -20,6 +20,8 @@ class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelega
     let textRecognizer = Vision.vision().onDeviceTextRecognizer()
     var imageFromArkitScene: UIImage?
     
+    var ref: DatabaseReference!
+    
     let cardInfoScene: SKScene = SKScene(fileNamed: "card-info")!
     let skillsScene: SKScene = SKScene(fileNamed: "skills")!
     let gitScene: SKScene = SKScene(fileNamed: "github")!
@@ -83,9 +85,6 @@ class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelega
         UIView.animate(withDuration: 2.5) {
             self.directionsLabel.center.x += self.view.bounds.width
         }
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        self.sceneView.addGestureRecognizer(tapGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -287,8 +286,8 @@ class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelega
                     self.name =  String(result.text[lowerRange.upperBound...upperRange.lowerBound])
                     self.name = self.name.trimmingCharacters(in: .whitespaces)
                     self.foundCard = true
-                    self.sendAndReceiveFromServer(params: ["name": self.name], url: "server/tasks") // server address goes here
-                    self.directionsLabel.text = "Name Recognized!"
+                    self.getDataFromDatabase(name: self.name)
+                    self.directionsLabel.text = "Name Found!"
                 }
             }
         }
@@ -308,71 +307,29 @@ class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelega
         }
     }
     
-    @objc
-    func handleTap(_ gestureRecognize: UIGestureRecognizer) {let location = gestureRecognize.location(in: self.sceneView)
-        let hitResults = self.sceneView.hitTest(location, options: [:])
-        
-        if hitResults.count > 0 {
-            let tappedNode = hitResults[0].node
-            if (tappedNode.name == "gitNode") {
-                if (self.gitPressed){
-                    UIApplication.shared.openURL(NSURL(string: self.gitLink)! as URL)
-                }
-                self.gitPressed = true
-            }
-            else if (tappedNode.name == "FBNode") {
-                UIApplication.shared.openURL(NSURL(string: self.FBLink)! as URL)
-            }
-            else if (tappedNode.name == "LINode") {
-                UIApplication.shared.openURL(NSURL(string: self.LInk)! as URL)
-            }
-            else if (tappedNode.name == "personalNode") {
-                UIApplication.shared.openURL(NSURL(string: self.personalLink)! as URL)
-            }
-        }
-    }
-    
-    func sendAndReceiveFromServer(params : Dictionary<String, String>, url : String) {
-        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default)
-            .responseJSON { response in
-                //to get status code
-                if let status = response.response?.statusCode {
-                    switch(status){
-                    case 201:
-                        print("example success")
-                    default:
-                        print("error with response status: \(status)")
+    func getDataFromDatabase(name: String) {
+        self.ref = Database.database().reference()
+        self.ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let value = snapshot.value as? NSDictionary {
+                for each in value {
+                    let dict = each.1 as? NSDictionary
+                    guard let firstName = dict?["firstName"] as? String else { return }
+                    guard let lastName = dict?["lastName"] as? String else { return }
+                    let fullName = firstName + " " + lastName
+                    
+                    print(fullName)
+                    
+                    if name == fullName {
+                        self.gitTitle = dict?["github"] as? String ?? "N/A"
+                        self.FBLink = dict?["facebook"] as? String ?? "N/A"
+                        self.LInk = dict?["github"] as? String ?? "N/A"
+                        self.personalLink = dict?["personalSite"] as? String ?? "N/A"
+                        self.major = dict?["major"] as? String ?? "N/A"
                     }
                 }
-                //to get JSON return value
-                if let result = response.result.value {
-                    let JSONDict = result as! NSDictionary
-                    let JSONArr: NSArray = Array(JSONDict)[0].value as! NSArray
-                    
-                    let gitArr: NSArray = JSONArr[2] as! NSArray
-                    self.gitTitle = gitArr[0] as! String
-                    self.gitDescript = gitArr[1] as! String
-                    self.gitLink = gitArr[2] as! String
-                    
-                    self.FBLink = JSONArr[3] as! String
-                    self.LInk = JSONArr[4] as! String
-                    self.personalLink = JSONArr[5] as! String
-                    
-                    let skills = JSONArr[6] as! NSArray
-                    self.skill1 = skills[0] as! String
-                    self.skill2 = skills[1] as! String
-                    self.skill3 = skills[2] as! String
-                    self.skill4 = skills[3] as! String
-                    self.skill5 = skills[4] as! String
-                    
-                    if (JSONArr[0] as! String == "") {
-                        self.major = "No Profile"
-                        self.foundCard = false
-                    }
-                    else {
-                        self.major = JSONArr[7] as! String
-                    }
-                }
+            }
+        }) { (error) in
+            print(error.localizedDescription)
         }
     }
 }

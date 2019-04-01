@@ -41,6 +41,7 @@ class ContainerViewController: UIViewController {
         self.scrollView.contentOffset = CGPoint(x: self.scrollView.contentSize.width / 3, y: 0.0)
         self.scrollView.showsHorizontalScrollIndicator = false
         self.scrollView.showsVerticalScrollIndicator = false
+        
     }
     
 }

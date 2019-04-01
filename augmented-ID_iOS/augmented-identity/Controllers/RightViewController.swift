@@ -36,13 +36,13 @@ class RightViewController: UIViewController, UITextFieldDelegate {
         self.ref = Database.database().reference()
         self.ref.child("users").child(self.userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
-            self.firstNameTextField.text = value?["firstName"] as? String ?? "N/A"
-            self.lastNameTextField.text = value?["lastName"] as? String ?? "N/A"
-            self.majorTextField.text = value?["major"] as? String ?? "N/A"
-            self.githubTextField.text = value?["github"] as? String ?? "N/A"
-            self.linkedInTextField.text = value?["linkedIn"] as? String ?? "N/A"
-            self.facebookTextField.text = value?["facebook"] as? String ?? "N/A"
-            self.personalTextField.text = value?["personalSite"] as? String ?? "N/A"
+            self.firstNameTextField.text = (value?["firstName"] as? String ?? "N/A").trimmingCharacters(in: .whitespaces)
+            self.lastNameTextField.text = (value?["lastName"] as? String ?? "N/A").trimmingCharacters(in: .whitespaces)
+            self.majorTextField.text = (value?["major"] as? String ?? "N/A").trimmingCharacters(in: .whitespaces)
+            self.githubTextField.text = (value?["github"] as? String ?? "N/A").trimmingCharacters(in: .whitespaces)
+            self.linkedInTextField.text = (value?["linkedIn"] as? String ?? "N/A").trimmingCharacters(in: .whitespaces)
+            self.facebookTextField.text = (value?["facebook"] as? String ?? "N/A").trimmingCharacters(in: .whitespaces)
+            self.personalTextField.text = (value?["personalSite"] as? String ?? "N/A").trimmingCharacters(in: .whitespaces)
         }) { (error) in
             print(error.localizedDescription)
         }
