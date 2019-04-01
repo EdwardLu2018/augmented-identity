@@ -530,6 +530,106 @@
                                     <action selector="githubEditingChanged:" destination="rme-HF-tZq" eventType="editingChanged" id="j1s-8N-ukJ"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Skill 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w6y-ko-z3V" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="15" y="413" width="150" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="2B3-we-AzD"/>
+                                    <constraint firstAttribute="height" constant="55" id="DMl-7V-ZpA"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="githubEditingChanged:" destination="rme-HF-tZq" eventType="editingChanged" id="Ko5-0m-B9M"/>
+                                    <action selector="skill1EditingChanged:" destination="rme-HF-tZq" eventType="editingChanged" id="5f9-l0-JHH"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Skill 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aj8-Mm-GTS" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="210" y="413" width="150" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="C48-fN-q4e"/>
+                                    <constraint firstAttribute="height" constant="55" id="QW4-D1-MsB"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="githubEditingChanged:" destination="rme-HF-tZq" eventType="editingChanged" id="anb-jT-5Ap"/>
+                                    <action selector="skill2EditingChanged:" destination="rme-HF-tZq" eventType="editingDidEnd" id="kiy-bK-CHJ"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Skill 4" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="coz-Rm-K5Q" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="210" y="493" width="150" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="K75-gJ-hS5"/>
+                                    <constraint firstAttribute="width" constant="150" id="tMK-Rm-7JU"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="githubEditingChanged:" destination="rme-HF-tZq" eventType="editingChanged" id="dWk-OH-8JU"/>
+                                    <action selector="skill4EditingChanged:" destination="rme-HF-tZq" eventType="editingDidEnd" id="thL-fj-BGM"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Skill 3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7v8-7n-Pri" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="15" y="493" width="150" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="89o-m3-joR"/>
+                                    <constraint firstAttribute="height" constant="55" id="eRS-5P-2PK"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="githubEditingChanged:" destination="rme-HF-tZq" eventType="editingChanged" id="kmi-ds-weH"/>
+                                    <action selector="skill3EditingChanged:" destination="rme-HF-tZq" eventType="editingDidEnd" id="0j6-6Z-1wT"/>
+                                </connections>
+                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="LinkedIn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JVF-7h-6Jb" customClass="HoshiTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="210" y="253" width="150" height="55"/>
                                 <constraints>
@@ -629,25 +729,60 @@
                                     <action selector="firstNameEditingChanged:" destination="rme-HF-tZq" eventType="editingChanged" id="vpU-BH-Z2x"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Skill 5" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zGX-QE-y3M" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="112.5" y="573" width="150" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="57O-DW-L47"/>
+                                    <constraint firstAttribute="height" constant="55" id="VpW-Uq-zNE"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="githubEditingChanged:" destination="rme-HF-tZq" eventType="editingChanged" id="s5K-LC-qyh"/>
+                                    <action selector="skill5EditingChanged:" destination="rme-HF-tZq" eventType="editingDidEnd" id="XU5-6u-Qgy"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="VU0-gv-d5n" firstAttribute="centerX" secondItem="1C5-8L-euI" secondAttribute="centerX" id="4Ly-5N-LHT"/>
+                            <constraint firstItem="7v8-7n-Pri" firstAttribute="top" secondItem="w6y-ko-z3V" secondAttribute="bottom" constant="25" id="8Hf-Z6-P8R"/>
                             <constraint firstItem="rzX-Y7-2i5" firstAttribute="trailing" secondItem="la3-Qk-YWz" secondAttribute="trailing" constant="15" id="8q6-8B-GY9"/>
                             <constraint firstItem="c1s-Hg-0GW" firstAttribute="top" secondItem="OZu-iN-VlV" secondAttribute="bottom" constant="25" id="AD8-wJ-yYd"/>
+                            <constraint firstItem="7v8-7n-Pri" firstAttribute="leading" secondItem="rzX-Y7-2i5" secondAttribute="leading" constant="15" id="BdW-Oc-c5F"/>
+                            <constraint firstItem="coz-Rm-K5Q" firstAttribute="top" secondItem="Aj8-Mm-GTS" secondAttribute="bottom" constant="25" id="GGb-VE-GIw"/>
                             <constraint firstItem="VU0-gv-d5n" firstAttribute="top" secondItem="rzX-Y7-2i5" secondAttribute="top" constant="15" id="HNI-hZ-ShE"/>
+                            <constraint firstItem="rzX-Y7-2i5" firstAttribute="trailing" secondItem="Aj8-Mm-GTS" secondAttribute="trailing" constant="15" id="IEv-g5-3KS"/>
                             <constraint firstItem="OZu-iN-VlV" firstAttribute="top" secondItem="X5g-H1-gDM" secondAttribute="bottom" constant="25" id="J29-R9-bMo"/>
+                            <constraint firstItem="zGX-QE-y3M" firstAttribute="centerX" secondItem="1C5-8L-euI" secondAttribute="centerX" id="Loi-Gh-V3y"/>
                             <constraint firstItem="xK8-Qi-KI9" firstAttribute="top" secondItem="c1s-Hg-0GW" secondAttribute="bottom" constant="25" id="NFb-Ch-kSN"/>
+                            <constraint firstItem="w6y-ko-z3V" firstAttribute="top" secondItem="xK8-Qi-KI9" secondAttribute="bottom" constant="25" id="Nvz-Xf-Bft"/>
+                            <constraint firstItem="rzX-Y7-2i5" firstAttribute="trailing" secondItem="coz-Rm-K5Q" secondAttribute="trailing" constant="15" id="P8I-fD-FIs"/>
                             <constraint firstItem="rzX-Y7-2i5" firstAttribute="trailing" secondItem="JVF-7h-6Jb" secondAttribute="trailing" constant="15" id="Qnd-CX-VXc"/>
                             <constraint firstItem="X5g-H1-gDM" firstAttribute="top" secondItem="VU0-gv-d5n" secondAttribute="bottom" constant="30" id="R5r-7z-ihw"/>
+                            <constraint firstItem="Aj8-Mm-GTS" firstAttribute="top" secondItem="la3-Qk-YWz" secondAttribute="bottom" constant="25" id="T5V-eN-NLA"/>
                             <constraint firstItem="JVF-7h-6Jb" firstAttribute="top" secondItem="OZu-iN-VlV" secondAttribute="bottom" constant="25" id="X3q-By-FRK"/>
                             <constraint firstItem="Tg3-hP-VBa" firstAttribute="top" secondItem="VU0-gv-d5n" secondAttribute="bottom" constant="30" id="YYZ-IX-La3"/>
                             <constraint firstItem="rzX-Y7-2i5" firstAttribute="trailing" secondItem="Tg3-hP-VBa" secondAttribute="trailing" constant="15" id="ZKg-uB-3ro"/>
                             <constraint firstItem="xK8-Qi-KI9" firstAttribute="leading" secondItem="rzX-Y7-2i5" secondAttribute="leading" constant="15" id="bGx-tX-nLW"/>
+                            <constraint firstItem="w6y-ko-z3V" firstAttribute="leading" secondItem="rzX-Y7-2i5" secondAttribute="leading" constant="15" id="e5s-dz-FbZ"/>
                             <constraint firstItem="X5g-H1-gDM" firstAttribute="leading" secondItem="rzX-Y7-2i5" secondAttribute="leading" constant="15" id="eto-De-gq8"/>
                             <constraint firstItem="OZu-iN-VlV" firstAttribute="centerX" secondItem="1C5-8L-euI" secondAttribute="centerX" id="fR4-S1-fVc"/>
                             <constraint firstItem="c1s-Hg-0GW" firstAttribute="leading" secondItem="rzX-Y7-2i5" secondAttribute="leading" constant="15" id="mJw-Ez-UBZ"/>
                             <constraint firstItem="la3-Qk-YWz" firstAttribute="top" secondItem="JVF-7h-6Jb" secondAttribute="bottom" constant="25" id="pdF-62-qrp"/>
+                            <constraint firstItem="zGX-QE-y3M" firstAttribute="top" secondItem="coz-Rm-K5Q" secondAttribute="bottom" constant="25" id="xMk-4X-lwB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rzX-Y7-2i5"/>
                     </view>
@@ -659,6 +794,11 @@
                         <outlet property="linkedInTextField" destination="JVF-7h-6Jb" id="LTn-AK-zfV"/>
                         <outlet property="majorTextField" destination="OZu-iN-VlV" id="Xnp-lc-2HX"/>
                         <outlet property="personalTextField" destination="la3-Qk-YWz" id="Zx4-lJ-hft"/>
+                        <outlet property="skill1TextField" destination="w6y-ko-z3V" id="CVq-ek-TQG"/>
+                        <outlet property="skill2TextField" destination="Aj8-Mm-GTS" id="ZGr-k1-S4t"/>
+                        <outlet property="skill3TextField" destination="7v8-7n-Pri" id="meX-St-vsf"/>
+                        <outlet property="skill4TextField" destination="coz-Rm-K5Q" id="f8M-z2-Drh"/>
+                        <outlet property="skill5TextField" destination="zGX-QE-y3M" id="Hgl-nj-h2n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SgW-8L-FII" userLabel="First Responder" sceneMemberID="firstResponder"/>

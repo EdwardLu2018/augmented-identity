@@ -37,7 +37,7 @@ class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelega
     var LInk: String = ""
     var personalLink: String = ""
     
-    var skills = [String]()
+//    var skills = [String]()
     
     var foundCard: Bool = false
     var foundAnchor: Bool = false
@@ -105,6 +105,7 @@ class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelega
         node.addChildNode(info.node)
         
         if (self.foundCard) {
+            self.getDataFromDatabase(name: self.name)
             if let skill1Label = skillsScene.childNode(withName: "skill1") as? SKLabelNode {
                 skill1Label.text = self.skill1
             }
@@ -192,7 +193,6 @@ class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelega
                     self.name =  String(result.text[lowerRange.upperBound...upperRange.lowerBound])
                     self.name = self.name.trimmingCharacters(in: .whitespaces)
                     self.foundCard = true
-                    self.getDataFromDatabase(name: self.name)
                     self.directionsLabel.text = "Name Found!"
                 }
             }
@@ -229,6 +229,11 @@ class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelega
                         self.LInk = dict?["github"] as? String ?? "N/A"
                         self.personalLink = dict?["personalSite"] as? String ?? "N/A"
                         self.major = dict?["major"] as? String ?? "N/A"
+                        self.skill1 = dict?["skill1"] as? String ?? "N/A"
+                        self.skill2 = dict?["skill2"] as? String ?? "N/A"
+                        self.skill3 = dict?["skill3"] as? String ?? "N/A"
+                        self.skill4 = dict?["skill4"] as? String ?? "N/A"
+                        self.skill5 = dict?["skill5"] as? String ?? "N/A"
                     }
                 }
             }
