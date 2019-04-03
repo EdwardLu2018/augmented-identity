@@ -16,6 +16,7 @@
 		2BCE8E85223F36720035C366 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCE8E84223F36720035C366 /* SignUpViewController.swift */; };
 		2BCE8EA5223F3E750035C366 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCE8EA4223F3E750035C366 /* LogInViewController.swift */; };
 		2BEBADDC2251A106005D1B89 /* ARContentClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBADDB2251A106005D1B89 /* ARContentClass.swift */; };
+		2BEBADE022551EE5005D1B89 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBADDF22551EE5005D1B89 /* UserTableViewCell.swift */; };
 		2BEE614A220EBF5A00321E18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE6149220EBF5A00321E18 /* AppDelegate.swift */; };
 		2BEE614C220EBF5B00321E18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE614B220EBF5B00321E18 /* ViewController.swift */; };
 		2BEE6151220EBF5E00321E18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BEE6150220EBF5E00321E18 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		2BCE8E84223F36720035C366 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2BCE8EA4223F3E750035C366 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		2BEBADDB2251A106005D1B89 /* ARContentClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARContentClass.swift; sourceTree = "<group>"; };
+		2BEBADDF22551EE5005D1B89 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		2BEE6146220EBF5A00321E18 /* augmented-identity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "augmented-identity.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BEE6149220EBF5A00321E18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BEE614B220EBF5B00321E18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				2BEBADDB2251A106005D1B89 /* ARContentClass.swift */,
+				2BEBADDF22551EE5005D1B89 /* UserTableViewCell.swift */,
 				2BEE6149220EBF5A00321E18 /* AppDelegate.swift */,
 				2BCE8E7D223F1AF30035C366 /* Controllers */,
 				2BCE8E73223F1AB70035C366 /* Sprites */,
@@ -326,6 +329,7 @@
 				2BCE8E85223F36720035C366 /* SignUpViewController.swift in Sources */,
 				2BEE614C220EBF5B00321E18 /* ViewController.swift in Sources */,
 				2BEE614A220EBF5A00321E18 /* AppDelegate.swift in Sources */,
+				2BEBADE022551EE5005D1B89 /* UserTableViewCell.swift in Sources */,
 				2BCE8EA5223F3E750035C366 /* LogInViewController.swift in Sources */,
 				2BEBADDC2251A106005D1B89 /* ARContentClass.swift in Sources */,
 				2BCE8E7B223F1ACF0035C366 /* LeftViewController.swift in Sources */,
