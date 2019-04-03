@@ -367,7 +367,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ry8-6A-gDe">
-                                <rect key="frame" x="25" y="45" width="325" height="597"/>
+                                <rect key="frame" x="10" y="30" width="355" height="627"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQe-Tr-WJ7">
                                         <rect key="frame" x="8" y="8" width="20" height="20"/>
@@ -387,10 +387,10 @@
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="ry8-6A-gDe" firstAttribute="top" secondItem="lLo-dY-OtD" secondAttribute="top" constant="25" id="Gsg-Ub-MRq"/>
-                            <constraint firstItem="lLo-dY-OtD" firstAttribute="bottom" secondItem="ry8-6A-gDe" secondAttribute="bottom" constant="25" id="QbB-1u-Vr5"/>
-                            <constraint firstItem="lLo-dY-OtD" firstAttribute="trailing" secondItem="ry8-6A-gDe" secondAttribute="trailing" constant="25" id="iXT-Yx-8Ha"/>
-                            <constraint firstItem="ry8-6A-gDe" firstAttribute="leading" secondItem="lLo-dY-OtD" secondAttribute="leading" constant="25" id="mjx-zv-OX2"/>
+                            <constraint firstItem="lLo-dY-OtD" firstAttribute="bottom" secondItem="ry8-6A-gDe" secondAttribute="bottom" constant="10" id="5cU-or-kvz"/>
+                            <constraint firstItem="ry8-6A-gDe" firstAttribute="top" secondItem="lLo-dY-OtD" secondAttribute="top" constant="10" id="l3G-bQ-XQA"/>
+                            <constraint firstItem="ry8-6A-gDe" firstAttribute="leading" secondItem="lLo-dY-OtD" secondAttribute="leading" constant="10" id="mcM-Rw-jBG"/>
+                            <constraint firstItem="lLo-dY-OtD" firstAttribute="trailing" secondItem="ry8-6A-gDe" secondAttribute="trailing" constant="10" id="qZ8-lH-fqG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lLo-dY-OtD"/>
                     </view>
@@ -436,7 +436,7 @@
                                             <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="10"/>
+                                                    <integer key="value" value="5"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
