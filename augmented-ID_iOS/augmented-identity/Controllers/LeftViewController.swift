@@ -28,12 +28,10 @@ class LeftViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if let value = snapshot.value as? NSDictionary {
                 for each in value {
                     let dict = each.1 as? NSDictionary
-                    print(dict!)
                     guard let firstName = dict?["firstName"] as? String else { return }
                     guard let lastName = dict?["lastName"] as? String else { return }
                     let fullName = firstName + " " + lastName
                     self.data.append(CellData.init(name: fullName, dict: dict))
-                    print(self.data)
                 }
             }
         }) { (error) in
