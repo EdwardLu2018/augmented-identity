@@ -381,7 +381,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
+                                        <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -434,6 +434,11 @@
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameLabel" destination="6G6-YE-UL1" id="tgd-0a-OKT"/>
@@ -882,7 +887,7 @@
         <image name="logo" width="294" height="284"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pKd-pm-GuD"/>
+        <segue reference="R5a-E7-Lsu"/>
         <segue reference="pKW-xw-HhI"/>
         <segue reference="18d-Nz-897"/>
     </inferredMetricsTieBreakers>
