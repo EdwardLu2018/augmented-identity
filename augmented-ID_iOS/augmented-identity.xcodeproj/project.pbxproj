@@ -12,11 +12,11 @@
 		2BCE8E79223F1ACF0035C366 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCE8E75223F1ACF0035C366 /* ContainerViewController.swift */; };
 		2BCE8E7A223F1ACF0035C366 /* MiddleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCE8E76223F1ACF0035C366 /* MiddleViewController.swift */; };
 		2BCE8E7B223F1ACF0035C366 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCE8E77223F1ACF0035C366 /* LeftViewController.swift */; };
-		2BCE8E83223F1E8B0035C366 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BCE8E82223F1E8B0035C366 /* GoogleService-Info.plist */; };
 		2BCE8E85223F36720035C366 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCE8E84223F36720035C366 /* SignUpViewController.swift */; };
 		2BCE8EA5223F3E750035C366 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCE8EA4223F3E750035C366 /* LogInViewController.swift */; };
 		2BEBADDC2251A106005D1B89 /* ARContentClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBADDB2251A106005D1B89 /* ARContentClass.swift */; };
 		2BEBADE022551EE5005D1B89 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBADDF22551EE5005D1B89 /* UserTableViewCell.swift */; };
+		2BEBADE22255A5B7005D1B89 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BEBADE12255A5B7005D1B89 /* GoogleService-Info.plist */; };
 		2BEE614A220EBF5A00321E18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE6149220EBF5A00321E18 /* AppDelegate.swift */; };
 		2BEE614C220EBF5B00321E18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE614B220EBF5B00321E18 /* ViewController.swift */; };
 		2BEE6151220EBF5E00321E18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BEE6150220EBF5E00321E18 /* Assets.xcassets */; };
@@ -38,11 +38,11 @@
 		2BCE8E75223F1ACF0035C366 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		2BCE8E76223F1ACF0035C366 /* MiddleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiddleViewController.swift; sourceTree = "<group>"; };
 		2BCE8E77223F1ACF0035C366 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
-		2BCE8E82223F1E8B0035C366 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2BCE8E84223F36720035C366 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2BCE8EA4223F3E750035C366 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		2BEBADDB2251A106005D1B89 /* ARContentClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARContentClass.swift; sourceTree = "<group>"; };
 		2BEBADDF22551EE5005D1B89 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		2BEBADE12255A5B7005D1B89 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../.Trash/augmented-ID_iOS/augmented-identity/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2BEE6146220EBF5A00321E18 /* augmented-identity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "augmented-identity.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BEE6149220EBF5A00321E18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BEE614B220EBF5B00321E18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -138,16 +138,16 @@
 		2BEE6148220EBF5A00321E18 /* augmented-identity */ = {
 			isa = PBXGroup;
 			children = (
+				2BEE6149220EBF5A00321E18 /* AppDelegate.swift */,
 				2BEBADDB2251A106005D1B89 /* ARContentClass.swift */,
 				2BEBADDF22551EE5005D1B89 /* UserTableViewCell.swift */,
-				2BEE6149220EBF5A00321E18 /* AppDelegate.swift */,
 				2BCE8E7D223F1AF30035C366 /* Controllers */,
 				2BCE8E73223F1AB70035C366 /* Sprites */,
 				2BCE8E7C223F1AE00035C366 /* Storyboards */,
 				2BEE6150220EBF5E00321E18 /* Assets.xcassets */,
 				2BEE6152220EBF5E00321E18 /* LaunchScreen.storyboard */,
 				2BEE6155220EBF5E00321E18 /* Info.plist */,
-				2BCE8E82223F1E8B0035C366 /* GoogleService-Info.plist */,
+				2BEBADE12255A5B7005D1B89 /* GoogleService-Info.plist */,
 			);
 			path = "augmented-identity";
 			sourceTree = "<group>";
@@ -226,7 +226,7 @@
 				2BEE616C220EECE900321E18 /* GHInfo.sks in Resources */,
 				2BEE616E220F316100321E18 /* skills.sks in Resources */,
 				2BEE6164220ED97800321E18 /* github.sks in Resources */,
-				2BCE8E83223F1E8B0035C366 /* GoogleService-Info.plist in Resources */,
+				2BEBADE22255A5B7005D1B89 /* GoogleService-Info.plist in Resources */,
 				2BCE8E72223F1A4F0035C366 /* Main.storyboard in Resources */,
 				2BEE6154220EBF5E00321E18 /* LaunchScreen.storyboard in Resources */,
 				2BEE6151220EBF5E00321E18 /* Assets.xcassets in Resources */,

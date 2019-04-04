@@ -38,13 +38,8 @@ class LeftViewController: UIViewController, UITableViewDataSource, UITableViewDe
             print(error.localizedDescription)
         }
         
-        tableView.dataSource = self
-        tableView.delegate = self
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        tableView.reloadData()
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -52,20 +47,13 @@ class LeftViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return self.data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! UserTableViewCell
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "userCell") as! UserTableViewCell
         cell.nameLabel.text = data[indexPath.row].name
-        cell.dict = data[indexPath.row].dict
+        cell.dict = self.data[indexPath.row].dict
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let alertController = UIAlertController(title: "Hint", message: "You have selected row \(indexPath.row).", preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-        alertController.addAction(alertAction)
-        present(alertController, animated: true, completion: nil)
     }
 }
