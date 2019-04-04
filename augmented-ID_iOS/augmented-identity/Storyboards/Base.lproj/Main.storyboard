@@ -452,7 +452,8 @@
                         <attributedString key="attributedTitle">
                             <fragment content="Updating Users...">
                                 <attributes>
-                                    <font key="NSFont" size="15" name="Avenir-Light"/>
+                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <font key="NSFont" size="17" name="Avenir-Light"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
