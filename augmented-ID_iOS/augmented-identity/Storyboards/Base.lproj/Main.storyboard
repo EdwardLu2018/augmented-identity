@@ -441,6 +441,11 @@
                                             </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="nameLabel" destination="6G6-YE-UL1" id="tgd-0a-OKT"/>
                                             <segue destination="cn3-Gq-bJT" kind="presentation" identifier="viewUser" modalPresentationStyle="overCurrentContext" id="pKd-pm-GuD"/>
