@@ -1,3 +1,4 @@
 .DS_Store
 *.pyc
 GoogleService-Info.plist
+augmented-ID_iOS/Pods/GoogleMobileVision/TextDetector/Frameworks/TextDetector.framework/TextDetector
