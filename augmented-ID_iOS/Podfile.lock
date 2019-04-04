@@ -100,6 +100,7 @@ PODS:
   - GTMSessionFetcher/Core (1.2.1)
   - GTMSessionFetcher/Full (1.2.1):
     - GTMSessionFetcher/Core (= 1.2.1)
+  - IQKeyboardManagerSwift (6.2.0)
   - leveldb-library (1.20)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
@@ -115,6 +116,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/MLVision
   - Firebase/MLVisionTextModel
+  - IQKeyboardManagerSwift
   - TextFieldEffects
 
 SPEC REPOS:
@@ -135,6 +137,7 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GoogleUtilities
     - GTMSessionFetcher
+    - IQKeyboardManagerSwift
     - leveldb-library
     - nanopb
     - Protobuf
@@ -157,11 +160,12 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
+  IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
 
-PODFILE CHECKSUM: c00b07190f825656787b1563b30acb2fac01a9cc
+PODFILE CHECKSUM: 53b837a8395df9e0ee9193efe1d94538e5d407ac
 
 COCOAPODS: 1.5.3

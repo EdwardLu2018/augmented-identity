@@ -43,8 +43,8 @@ class RightViewController: UIViewController, UITextFieldDelegate {
         self.skill4TextField.delegate = self
         self.skill5TextField.delegate = self
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         self.ref = Database.database().reference()
         self.ref.child("users").child(self.userID!).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -139,17 +139,17 @@ class RightViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
-        }
-    }
+//    @objc func keyboardWillShow(notification: NSNotification) {
+//        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+//            if self.view.frame.origin.y == 0 {
+//                self.view.frame.origin.y -= keyboardSize.height
+//            }
+//        }
+//    }
+//
+//    @objc func keyboardWillHide(notification: NSNotification) {
+//        if self.view.frame.origin.y != 0 {
+//            self.view.frame.origin.y = 0
+//        }
+//    }
 }

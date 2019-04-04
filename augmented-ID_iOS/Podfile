@@ -8,6 +8,7 @@ target 'augmented-identity' do
 
   # Pods for TextTest
   pod 'TextFieldEffects'
+  pod 'IQKeyboardManagerSwift'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
