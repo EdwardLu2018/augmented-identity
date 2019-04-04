@@ -55,8 +55,8 @@ class LeftViewController: UITableViewController {
             if let value = snapshot.value as? NSDictionary {
                 for each in value {
                     let dict = each.1 as? NSDictionary
-                    guard let firstName = dict?["firstName"] as? String else { return }
-                    guard let lastName = dict?["lastName"] as? String else { return }
+                    guard let firstName = dict?["firstName"] as? String else { break }
+                    guard let lastName = dict?["lastName"] as? String else { break }
                     let fullName = firstName + " " + lastName
                     self.data.append(CellData.init(name: fullName, dict: dict))
                     self.tableView.reloadData()
@@ -67,4 +67,5 @@ class LeftViewController: UITableViewController {
             print(error.localizedDescription)
         }
     }
+    
 }
