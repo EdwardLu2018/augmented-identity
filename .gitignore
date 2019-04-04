@@ -2,3 +2,4 @@
 *.pyc
 GoogleService-Info.plist
 augmented-ID_iOS/Pods/GoogleMobileVision/TextDetector/Frameworks/TextDetector.framework/TextDetector
+augmented-ID_iOS/Pods/FirebaseCore/Firebase/Core/Public/FIROptions.h
