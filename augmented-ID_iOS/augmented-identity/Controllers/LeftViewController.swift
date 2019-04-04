@@ -42,6 +42,11 @@ class LeftViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.tableView.delegate = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.reloadData()
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
