@@ -14,9 +14,8 @@ struct CellData {
     let dict: NSDictionary?
 }
 
-class LeftViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class LeftViewController: UITableViewController {
     
-    @IBOutlet weak var tableView: UITableView!
     var data: [CellData] = []
     var ref: DatabaseReference!
     
@@ -33,13 +32,11 @@ class LeftViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     let fullName = firstName + " " + lastName
                     self.data.append(CellData.init(name: fullName, dict: dict))
                 }
+                self.tableView.reloadData()
             }
         }) { (error) in
             print(error.localizedDescription)
         }
-        
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -47,16 +44,16 @@ class LeftViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.tableView.reloadData()
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.data.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "userCell") as! UserTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! UserTableViewCell
         cell.nameLabel.text = data[indexPath.row].name
         cell.dict = self.data[indexPath.row].dict
         return cell
