@@ -1,5 +1,5 @@
 .DS_Store
 *.pyc
 GoogleService-Info.plist
-augmented-ID_iOS/Pods/GoogleMobileVision/TextDetector/Frameworks/TextDetector.framework/TextDetector
-augmented-ID_iOS/Pods/FirebaseCore/Firebase/Core/Public/FIROptions.h
+*/Pods/GoogleMobileVision/TextDetector/Frameworks/TextDetector.framework/TextDetector
+*/Pods/FirebaseCore/Firebase/Core/Public/FIROptions.h
