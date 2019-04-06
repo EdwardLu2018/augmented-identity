@@ -23,7 +23,6 @@
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="OP3-d8-Ske"/>
-                                    <constraint firstAttribute="width" constant="375" id="TQw-AV-yCO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
                                 <state key="normal" title="Sign Up">
@@ -43,7 +42,6 @@
                                 <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="gkL-Jt-FH8"/>
-                                    <constraint firstAttribute="width" constant="375" id="sYP-rh-igT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
                                 <state key="normal" title="Log In">
@@ -59,23 +57,26 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="vNE-Oa-fiN">
-                                <rect key="frame" x="0.0" y="120" width="375" height="383"/>
+                                <rect key="frame" x="0.0" y="142" width="375" height="383"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="383" id="0rH-wK-gef"/>
+                                    <constraint firstAttribute="width" secondItem="vNE-Oa-fiN" secondAttribute="height" multiplier="375:383" id="rXf-7d-COU"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ix3-wA-wPQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DBy-iU-qCc"/>
-                            <constraint firstItem="vNE-Oa-fiN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HbF-04-ibr"/>
-                            <constraint firstItem="vNE-Oa-fiN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="Mel-XG-UT3"/>
-                            <constraint firstItem="ix3-wA-wPQ" firstAttribute="top" secondItem="Mpy-FG-JaH" secondAttribute="bottom" id="QBt-kK-opt"/>
-                            <constraint firstItem="ix3-wA-wPQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Uk1-vh-jys"/>
-                            <constraint firstItem="vNE-Oa-fiN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fuP-n1-c6W"/>
-                            <constraint firstItem="Mpy-FG-JaH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oVi-FZ-vqV"/>
-                            <constraint firstItem="ix3-wA-wPQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qrg-xy-uQs"/>
-                            <constraint firstItem="Mpy-FG-JaH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yoa-8U-Vm8"/>
+                            <constraint firstItem="vNE-Oa-fiN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1L0-Ar-9H7"/>
+                            <constraint firstItem="ix3-wA-wPQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="2dr-Fa-qeI"/>
+                            <constraint firstItem="vNE-Oa-fiN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Zx-nx-w80"/>
+                            <constraint firstItem="Mpy-FG-JaH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7F6-4Q-6kQ"/>
+                            <constraint firstItem="ix3-wA-wPQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GiQ-a8-ceV"/>
+                            <constraint firstItem="vNE-Oa-fiN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LQF-a2-H58"/>
+                            <constraint firstItem="vNE-Oa-fiN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Vvz-3p-BHf"/>
+                            <constraint firstItem="vNE-Oa-fiN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iJT-dg-39T"/>
+                            <constraint firstItem="ix3-wA-wPQ" firstAttribute="top" secondItem="Mpy-FG-JaH" secondAttribute="bottom" id="jG6-Dp-6oi"/>
+                            <constraint firstItem="ix3-wA-wPQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kjO-ty-vDb"/>
+                            <constraint firstItem="vNE-Oa-fiN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wX4-uU-vwG"/>
+                            <constraint firstItem="Mpy-FG-JaH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zez-2D-YuJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -448,6 +449,7 @@
                         </connections>
                     </tableView>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="eHn-ma-IaX">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <attributedString key="attributedTitle">
                             <fragment content="Updating Users...">
@@ -889,7 +891,7 @@
         <image name="logo" width="294" height="284"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XeR-wr-Xka"/>
+        <segue reference="PFg-UT-Ubr"/>
         <segue reference="XPa-eZ-CAR"/>
     </inferredMetricsTieBreakers>
 </document>
