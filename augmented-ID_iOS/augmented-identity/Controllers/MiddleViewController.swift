@@ -50,11 +50,11 @@ class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelega
     var skill4: String = ""
     var skill5: String = ""
     
-    let fadeDuration: TimeInterval = 7
+    let fadeDuration: TimeInterval = 5
     
     lazy var fadeInAction: SCNAction = {
         return .sequence([
-            .fadeOpacity(by: 0.9, duration: fadeDuration)
+            .fadeOpacity(by: 0.9, duration: self.fadeDuration)
             ])
     }()
     
@@ -91,19 +91,19 @@ class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelega
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let cardAnchor = anchor as? ARImageAnchor else { return }
         let referenceImage = cardAnchor.referenceImage
+        if let nameLabel = cardInfoScene.childNode(withName: "name") as? SKLabelNode {
+            nameLabel.text = self.name
+        }
+        if let majorLabel = cardInfoScene.childNode(withName: "major") as? SKLabelNode {
+            majorLabel.text = self.major
+        }
+        
+        let info = ARPlane(scene: cardInfoScene, width: referenceImage.physicalSize.width, height: referenceImage.physicalSize.height * 0.6, x: 0, y: 0, z: -0.048)
+        info.node.runAction(self.fadeInAction)
+        node.addChildNode(info.node)
+        
         if (cardAnchor.isTracked) {
             self.foundAnchor = true
-            if let nameLabel = cardInfoScene.childNode(withName: "name") as? SKLabelNode {
-                nameLabel.text = self.name
-            }
-            if let nameLabel = cardInfoScene.childNode(withName: "major") as? SKLabelNode {
-                nameLabel.text = self.major
-            }
-            
-            let info = ARPlane(scene: cardInfoScene, width: referenceImage.physicalSize.width, height: referenceImage.physicalSize.height * 0.6, x: 0, y: 0, z: -0.048)
-            info.node.runAction(self.fadeInAction)
-            node.addChildNode(info.node)
-            
             if (self.foundCard) {
                 self.getDataFromDatabase(name: self.name)
                 if let skill1Label = skillsScene.childNode(withName: "skill1") as? SKLabelNode {
@@ -126,37 +126,37 @@ class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelega
                 skills.node.runAction(self.fadeInAction)
                 node.addChildNode(skills.node)
                 
-    //            if let gitTitleLabel = gitInfoScene.childNode(withName: "projectName") as? SKLabelNode {
-    //                gitTitleLabel.text = self.gitTitle
-    //            }
-    //
-    //            if let gitDescriptionLabel = gitInfoScene.childNode(withName: "projectDescription") as? SKLabelNode {
-    //                gitDescriptionLabel.text = self.gitDescript
-    //            }
+//                if let gitTitleLabel = gitInfoScene.childNode(withName: "projectName") as? SKLabelNode {
+//                    gitTitleLabel.text = self.gitTitle
+//                }
+//
+//                if let gitDescriptionLabel = gitInfoScene.childNode(withName: "projectDescription") as? SKLabelNode {
+//                    gitDescriptionLabel.text = self.gitDescript
+//                }
                 
                 let github = ARPlane(scene: gitScene, width: 0.015, height: 0.015, x: -0.034, y: 0, z: 0.040)
                 github.plane.cornerRadius = 4.5
                 github.node.runAction(self.fadeInAction)
                 node.addChildNode(github.node)
                 
-    //            let gitInfoPlane = SCNPlane(width: referenceImage.physicalSize.width, height: referenceImage.physicalSize.height)
-    //            gitInfoPlane.cornerRadius = gitInfoPlane.width / 25
-    //
-    //            gitInfoPlane.firstMaterial?.diffuse.contents = gitInfoScene
-    //            gitInfoPlane.firstMaterial?.isDoubleSided = true
-    //            gitInfoPlane.firstMaterial?.diffuse.contentsTransform = SCNMatrix4Translate(SCNMatrix4MakeScale(1, -1, 1), 0, 1, 0)
-    //
-    //            let gitInfoPlaneNode = SCNNode(geometry: gitInfoPlane)
-    //            gitInfoPlaneNode.name = "gitInfoNode"
-    //            gitInfoPlaneNode.eulerAngles.x = -.pi / 2
-    //            gitInfoPlaneNode.opacity = 0.10
-    //            gitInfoPlaneNode.position.z = Float(0.052 + (gitInfoPlane.height / 2.0))
-    //
-    //            if (self.gitPressed) {
-    //                gitInfoPlaneNode.runAction(self.fadeInAction)
-    //
-    //                node.addChildNode(gitInfoPlaneNode)
-    //            }
+//                let gitInfoPlane = SCNPlane(width: referenceImage.physicalSize.width, height: referenceImage.physicalSize.height)
+//                gitInfoPlane.cornerRadius = gitInfoPlane.width / 25
+//
+//                gitInfoPlane.firstMaterial?.diffuse.contents = gitInfoScene
+//                gitInfoPlane.firstMaterial?.isDoubleSided = true
+//                gitInfoPlane.firstMaterial?.diffuse.contentsTransform = SCNMatrix4Translate(SCNMatrix4MakeScale(1, -1, 1), 0, 1, 0)
+//
+//                let gitInfoPlaneNode = SCNNode(geometry: gitInfoPlane)
+//                gitInfoPlaneNode.name = "gitInfoNode"
+//                gitInfoPlaneNode.eulerAngles.x = -.pi / 2
+//                gitInfoPlaneNode.opacity = 0.10
+//                gitInfoPlaneNode.position.z = Float(0.052 + (gitInfoPlane.height / 2.0))
+//    
+//                if (self.gitPressed) {
+//                    gitInfoPlaneNode.runAction(self.fadeInAction)
+//
+//                    node.addChildNode(gitInfoPlaneNode)
+//                }
                 let facebook = ARPlane(scene: FBScene, width: 0.015, height: 0.015, x: -0.012, y: 0, z: 0.040)
                 facebook.plane.cornerRadius = 4.5
                 facebook.node.runAction(self.fadeInAction)
@@ -174,7 +174,7 @@ class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelega
             }
         }
         else {
-            print("removed anchor")
+//            print("removed anchor")
             self.foundCard = false
             self.foundAnchor = false
             self.name = "Press And Hold"
