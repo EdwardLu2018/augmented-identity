@@ -24,6 +24,7 @@ class ARPlane {
         plane.firstMaterial?.diffuse.contentsTransform = SCNMatrix4Translate(SCNMatrix4MakeScale(1, -1, 1), 0, 1, 0)
         
         node = SCNNode(geometry: plane)
+        node.opacity = 0.0
         node.eulerAngles.x = -.pi / 2
         node.position.x = x
         node.position.y = y
