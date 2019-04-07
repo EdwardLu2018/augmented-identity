@@ -36,8 +36,6 @@ class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelega
     var LInk: String = ""
     var personalLink: String = ""
     
-//    var skills = [String]()
-    
     var foundCard: Bool = false
     var foundAnchor: Bool = false
     var name: String = "Press And Hold"
@@ -52,7 +50,7 @@ class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelega
     lazy var fadeInAction: SCNAction = {
         return .sequence([
             .wait(duration: 1.0),
-            .fadeOpacity(by: 0.9, duration: 0.25)
+            .fadeOpacity(to: 0.95, duration: 1.0)
             ])
     }()
     
@@ -99,6 +97,7 @@ class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelega
             }
             
             let info = ARPlane(scene: self.cardInfoScene, width: referenceImage.physicalSize.width, height: referenceImage.physicalSize.height * 0.6, x: 0, y: 0, z: -0.048)
+            info.node.opacity = 0.0
             info.node.runAction(self.fadeInAction)
             node.addChildNode(info.node)
             
@@ -123,7 +122,6 @@ class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelega
                     }
                     
                     let skills = ARPlane(scene: self.skillsScene, width: referenceImage.physicalSize.width, height: referenceImage.physicalSize.height * 3.15, x: 0.093, y: 0, z: 0.0216)
-                    skills.node.runAction(self.fadeInAction)
                     node.addChildNode(skills.node)
                     
     //                if let gitTitleLabel = gitInfoScene.childNode(withName: "projectName") as? SKLabelNode {
@@ -136,7 +134,6 @@ class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelega
                     
                     let github = ARPlane(scene: self.gitScene, width: 0.015, height: 0.015, x: -0.034, y: 0, z: 0.040)
                     github.plane.cornerRadius = 4.5
-                    github.node.runAction(self.fadeInAction)
                     node.addChildNode(github.node)
                     
     //                let gitInfoPlane = SCNPlane(width: referenceImage.physicalSize.width, height: referenceImage.physicalSize.height)
@@ -159,22 +156,18 @@ class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelega
     //                }
                     let facebook = ARPlane(scene: self.FBScene, width: 0.015, height: 0.015, x: -0.012, y: 0, z: 0.040)
                     facebook.plane.cornerRadius = 4.5
-                    facebook.node.runAction(self.fadeInAction)
                     node.addChildNode(facebook.node)
                     
                     let linkedIn = ARPlane(scene: self.LIScene, width: 0.015, height: 0.015, x: 0.010, y: 0, z: 0.040)
                     linkedIn.plane.cornerRadius = 4.5
-                    linkedIn.node.runAction(self.fadeInAction)
                     node.addChildNode(linkedIn.node)
                     
                     let personal = ARPlane(scene: self.personalScene, width: 0.015, height: 0.015, x: 0.032, y: 0, z: 0.040)
                     personal.plane.cornerRadius = 4.5
-                    personal.node.runAction(self.fadeInAction)
                     node.addChildNode(personal.node)
                 }
             }
             else {
-    //            print("removed anchor")
                 self.foundCard = false
                 self.foundAnchor = false
                 self.name = "Press And Hold"

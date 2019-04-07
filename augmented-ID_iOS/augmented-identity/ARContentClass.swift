@@ -25,7 +25,6 @@ class ARPlane {
         
         node = SCNNode(geometry: plane)
         node.eulerAngles.x = -.pi / 2
-        node.opacity = 0.10
         node.position.x = x
         node.position.y = y
         node.position.z = z
