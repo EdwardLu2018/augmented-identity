@@ -11,13 +11,13 @@ import ARKit
 import SpriteKit
 import Foundation
 import Firebase
+import FirebaseDatabase
 
 class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate  {
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var directionsLabel: UILabel!
     
     let textRecognizer = Vision.vision().onDeviceTextRecognizer()
-    var imageFromArkitScene: UIImage?
     
     var ref: DatabaseReference!
     
@@ -89,88 +89,97 @@ class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelega
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-        guard let imageAnchor = anchor as? ARImageAnchor else { return }
-        let referenceImage = imageAnchor.referenceImage
-        self.foundAnchor = true
-        
-        if let nameLabel = cardInfoScene.childNode(withName: "name") as? SKLabelNode {
-            nameLabel.text = self.name
+        guard let cardAnchor = anchor as? ARImageAnchor else { return }
+        let referenceImage = cardAnchor.referenceImage
+        if (cardAnchor.isTracked) {
+            self.foundAnchor = true
+            if let nameLabel = cardInfoScene.childNode(withName: "name") as? SKLabelNode {
+                nameLabel.text = self.name
+            }
+            if let nameLabel = cardInfoScene.childNode(withName: "major") as? SKLabelNode {
+                nameLabel.text = self.major
+            }
+            
+            let info = ARPlane(scene: cardInfoScene, width: referenceImage.physicalSize.width, height: referenceImage.physicalSize.height * 0.6, x: 0, y: 0, z: -0.048)
+            info.node.runAction(self.fadeInAction)
+            node.addChildNode(info.node)
+            
+            if (self.foundCard) {
+                self.getDataFromDatabase(name: self.name)
+                if let skill1Label = skillsScene.childNode(withName: "skill1") as? SKLabelNode {
+                    skill1Label.text = self.skill1
+                }
+                if let skill2Label = skillsScene.childNode(withName: "skill2") as? SKLabelNode {
+                    skill2Label.text = self.skill2
+                }
+                if let skill3Label = skillsScene.childNode(withName: "skill3") as? SKLabelNode {
+                    skill3Label.text = self.skill3
+                }
+                if let skill4Label = skillsScene.childNode(withName: "skill4") as? SKLabelNode {
+                    skill4Label.text = self.skill4
+                }
+                if let skill5Label = skillsScene.childNode(withName: "skill5") as? SKLabelNode {
+                    skill5Label.text = self.skill5
+                }
+                
+                let skills = ARPlane(scene: skillsScene, width: referenceImage.physicalSize.width, height: referenceImage.physicalSize.height * 3.15, x: 0.093, y: 0, z: 0.0216)
+                skills.node.runAction(self.fadeInAction)
+                node.addChildNode(skills.node)
+                
+    //            if let gitTitleLabel = gitInfoScene.childNode(withName: "projectName") as? SKLabelNode {
+    //                gitTitleLabel.text = self.gitTitle
+    //            }
+    //
+    //            if let gitDescriptionLabel = gitInfoScene.childNode(withName: "projectDescription") as? SKLabelNode {
+    //                gitDescriptionLabel.text = self.gitDescript
+    //            }
+                
+                let github = ARPlane(scene: gitScene, width: 0.015, height: 0.015, x: -0.034, y: 0, z: 0.040)
+                github.plane.cornerRadius = 4.5
+                github.node.runAction(self.fadeInAction)
+                node.addChildNode(github.node)
+                
+    //            let gitInfoPlane = SCNPlane(width: referenceImage.physicalSize.width, height: referenceImage.physicalSize.height)
+    //            gitInfoPlane.cornerRadius = gitInfoPlane.width / 25
+    //
+    //            gitInfoPlane.firstMaterial?.diffuse.contents = gitInfoScene
+    //            gitInfoPlane.firstMaterial?.isDoubleSided = true
+    //            gitInfoPlane.firstMaterial?.diffuse.contentsTransform = SCNMatrix4Translate(SCNMatrix4MakeScale(1, -1, 1), 0, 1, 0)
+    //
+    //            let gitInfoPlaneNode = SCNNode(geometry: gitInfoPlane)
+    //            gitInfoPlaneNode.name = "gitInfoNode"
+    //            gitInfoPlaneNode.eulerAngles.x = -.pi / 2
+    //            gitInfoPlaneNode.opacity = 0.10
+    //            gitInfoPlaneNode.position.z = Float(0.052 + (gitInfoPlane.height / 2.0))
+    //
+    //            if (self.gitPressed) {
+    //                gitInfoPlaneNode.runAction(self.fadeInAction)
+    //
+    //                node.addChildNode(gitInfoPlaneNode)
+    //            }
+                let facebook = ARPlane(scene: FBScene, width: 0.015, height: 0.015, x: -0.012, y: 0, z: 0.040)
+                facebook.plane.cornerRadius = 4.5
+                facebook.node.runAction(self.fadeInAction)
+                node.addChildNode(facebook.node)
+                
+                let linkedIn = ARPlane(scene: LIScene, width: 0.015, height: 0.015, x: 0.010, y: 0, z: 0.040)
+                linkedIn.plane.cornerRadius = 4.5
+                linkedIn.node.runAction(self.fadeInAction)
+                node.addChildNode(linkedIn.node)
+                
+                let personal = ARPlane(scene: personalScene, width: 0.015, height: 0.015, x: 0.032, y: 0, z: 0.040)
+                personal.plane.cornerRadius = 4.5
+                personal.node.runAction(self.fadeInAction)
+                node.addChildNode(personal.node)
+            }
         }
-        if let nameLabel = cardInfoScene.childNode(withName: "major") as? SKLabelNode {
-            nameLabel.text = self.major
-        }
-        
-        let info = ARPlane(scene: cardInfoScene, width: referenceImage.physicalSize.width, height: referenceImage.physicalSize.height * 0.6, x: 0, y: 0, z: -0.048)
-        info.node.runAction(self.fadeInAction)
-        node.addChildNode(info.node)
-        
-        if (self.foundCard) {
-            self.getDataFromDatabase(name: self.name)
-            if let skill1Label = skillsScene.childNode(withName: "skill1") as? SKLabelNode {
-                skill1Label.text = self.skill1
-            }
-            if let skill2Label = skillsScene.childNode(withName: "skill2") as? SKLabelNode {
-                skill2Label.text = self.skill2
-            }
-            if let skill3Label = skillsScene.childNode(withName: "skill3") as? SKLabelNode {
-                skill3Label.text = self.skill3
-            }
-            if let skill4Label = skillsScene.childNode(withName: "skill4") as? SKLabelNode {
-                skill4Label.text = self.skill4
-            }
-            if let skill5Label = skillsScene.childNode(withName: "skill5") as? SKLabelNode {
-                skill5Label.text = self.skill5
-            }
-            
-            let skills = ARPlane(scene: skillsScene, width: referenceImage.physicalSize.width, height: referenceImage.physicalSize.height * 3.15, x: 0.093, y: 0, z: 0.0216)
-            skills.node.runAction(self.fadeInAction)
-            node.addChildNode(skills.node)
-            
-//            if let gitTitleLabel = gitInfoScene.childNode(withName: "projectName") as? SKLabelNode {
-//                gitTitleLabel.text = self.gitTitle
-//            }
-//
-//            if let gitDescriptionLabel = gitInfoScene.childNode(withName: "projectDescription") as? SKLabelNode {
-//                gitDescriptionLabel.text = self.gitDescript
-//            }
-            
-            let github = ARPlane(scene: gitScene, width: 0.015, height: 0.015, x: -0.034, y: 0, z: 0.040)
-            github.plane.cornerRadius = 4.5
-            github.node.runAction(self.fadeInAction)
-            node.addChildNode(github.node)
-            
-//            let gitInfoPlane = SCNPlane(width: referenceImage.physicalSize.width, height: referenceImage.physicalSize.height)
-//            gitInfoPlane.cornerRadius = gitInfoPlane.width / 25
-//
-//            gitInfoPlane.firstMaterial?.diffuse.contents = gitInfoScene
-//            gitInfoPlane.firstMaterial?.isDoubleSided = true
-//            gitInfoPlane.firstMaterial?.diffuse.contentsTransform = SCNMatrix4Translate(SCNMatrix4MakeScale(1, -1, 1), 0, 1, 0)
-//
-//            let gitInfoPlaneNode = SCNNode(geometry: gitInfoPlane)
-//            gitInfoPlaneNode.name = "gitInfoNode"
-//            gitInfoPlaneNode.eulerAngles.x = -.pi / 2
-//            gitInfoPlaneNode.opacity = 0.10
-//            gitInfoPlaneNode.position.z = Float(0.052 + (gitInfoPlane.height / 2.0))
-//
-//            if (self.gitPressed) {
-//                gitInfoPlaneNode.runAction(self.fadeInAction)
-//
-//                node.addChildNode(gitInfoPlaneNode)
-//            }
-            let facebook = ARPlane(scene: FBScene, width: 0.015, height: 0.015, x: -0.012, y: 0, z: 0.040)
-            facebook.plane.cornerRadius = 4.5
-            facebook.node.runAction(self.fadeInAction)
-            node.addChildNode(facebook.node)
-            
-            let linkedIn = ARPlane(scene: LIScene, width: 0.015, height: 0.015, x: 0.010, y: 0, z: 0.040)
-            linkedIn.plane.cornerRadius = 4.5
-            linkedIn.node.runAction(self.fadeInAction)
-            node.addChildNode(linkedIn.node)
-            
-            let personal = ARPlane(scene: personalScene, width: 0.015, height: 0.015, x: 0.032, y: 0, z: 0.040)
-            personal.plane.cornerRadius = 4.5
-            personal.node.runAction(self.fadeInAction)
-            node.addChildNode(personal.node)
+        else {
+            print("removed anchor")
+            self.foundCard = false
+            self.foundAnchor = false
+            self.name = "Press And Hold"
+            self.major = "To Scan Card"
+            self.sceneView.session.remove(anchor: anchor)
         }
     }
     
@@ -183,6 +192,7 @@ class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelega
     }
     
     func getText(image: UIImage) {
+        self.directionsLabel.text = "Scanning..."
         let visionImage = VisionImage(image: image)
         textRecognizer.process(visionImage) { result, error in
             guard error == nil, let result = result else { return }
@@ -201,7 +211,6 @@ class MiddleViewController: UIViewController, ARSCNViewDelegate, ARSessionDelega
     
     @IBAction func longPress(_ gestureRecognizer: UILongPressGestureRecognizer) {
         if gestureRecognizer.state == .began {
-            self.directionsLabel.text = "Scanning..."
             if (self.foundAnchor) {
                 self.foundCard = false
                 let imageFromArkitScene: UIImage? = sceneView.snapshot()
