@@ -90,6 +90,9 @@ class RightViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func firstNameEditingChanged(_ sender: Any) {
         self.ref.child("users/\(self.userID!)/firstName").setValue(self.firstNameTextField.text)
+    }
+    
+    @IBAction func firstNameEditingEnded(_ sender: Any) {
         self.titleTextField.text = "\(self.firstNameTextField.text != "" ? self.firstNameTextField.text! + "'s" : "Your") Portfolio"
     }
     

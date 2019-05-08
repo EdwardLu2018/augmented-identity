@@ -224,13 +224,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Portfolio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VU0-gv-d5n">
-                                <rect key="frame" x="125" y="35" width="125" height="28"/>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <rect key="frame" x="128.5" y="35" width="118.5" height="26"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tg3-hP-VBa" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="210" y="93" width="150" height="55"/>
+                                <rect key="frame" x="210" y="91" width="150" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="kum-w3-Zfw"/>
                                     <constraint firstAttribute="width" constant="150" id="yPN-hj-CGy"/>
@@ -254,7 +254,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Major" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="OZu-iN-VlV" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="112.5" y="173" width="150" height="55"/>
+                                <rect key="frame" x="112.5" y="171" width="150" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="FYP-Zl-jnG"/>
                                     <constraint firstAttribute="width" constant="150" id="aIN-aT-Cv7"/>
@@ -278,7 +278,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="GitHub" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c1s-Hg-0GW" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="15" y="253" width="150" height="55"/>
+                                <rect key="frame" x="15" y="251" width="150" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="Gxn-Bo-nd0"/>
                                     <constraint firstAttribute="width" constant="150" id="T69-eu-wHt"/>
@@ -302,7 +302,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Skill 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w6y-ko-z3V" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="15" y="413" width="150" height="55"/>
+                                <rect key="frame" x="15" y="411" width="150" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="2B3-we-AzD"/>
                                     <constraint firstAttribute="height" constant="55" id="DMl-7V-ZpA"/>
@@ -327,7 +327,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Skill 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aj8-Mm-GTS" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="210" y="413" width="150" height="55"/>
+                                <rect key="frame" x="210" y="411" width="150" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="C48-fN-q4e"/>
                                     <constraint firstAttribute="height" constant="55" id="QW4-D1-MsB"/>
@@ -352,7 +352,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Skill 4" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="coz-Rm-K5Q" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="210" y="493" width="150" height="55"/>
+                                <rect key="frame" x="210" y="491" width="150" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="K75-gJ-hS5"/>
                                     <constraint firstAttribute="width" constant="150" id="tMK-Rm-7JU"/>
@@ -377,7 +377,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Skill 3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7v8-7n-Pri" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="15" y="493" width="150" height="55"/>
+                                <rect key="frame" x="15" y="491" width="150" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="89o-m3-joR"/>
                                     <constraint firstAttribute="height" constant="55" id="eRS-5P-2PK"/>
@@ -402,7 +402,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="LinkedIn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JVF-7h-6Jb" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="210" y="253" width="150" height="55"/>
+                                <rect key="frame" x="210" y="251" width="150" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="0d2-YX-97d"/>
                                     <constraint firstAttribute="height" constant="55" id="paR-NM-zuw"/>
@@ -426,7 +426,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Facebook" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xK8-Qi-KI9" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="15" y="333" width="150" height="55"/>
+                                <rect key="frame" x="15" y="331" width="150" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Luc-Kw-alz"/>
                                     <constraint firstAttribute="height" constant="55" id="mKd-qc-TKg"/>
@@ -450,7 +450,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Personal Site" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="la3-Qk-YWz" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="210" y="333" width="150" height="55"/>
+                                <rect key="frame" x="210" y="331" width="150" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="RDQ-fD-e7g"/>
                                     <constraint firstAttribute="height" constant="55" id="wcF-yh-fdK"/>
@@ -474,7 +474,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="X5g-H1-gDM" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="15" y="93" width="150" height="55"/>
+                                <rect key="frame" x="15" y="91" width="150" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Mrx-as-2ya"/>
                                     <constraint firstAttribute="height" constant="55" id="Qib-V0-rBD"/>
@@ -495,10 +495,11 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="firstNameEditingChanged:" destination="rme-HF-tZq" eventType="editingChanged" id="vpU-BH-Z2x"/>
+                                    <action selector="firstNameEditingEnded:" destination="rme-HF-tZq" eventType="editingDidEnd" id="8ld-BC-YZe"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Skill 5" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zGX-QE-y3M" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="112.5" y="573" width="150" height="55"/>
+                                <rect key="frame" x="112.5" y="571" width="150" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="57O-DW-L47"/>
                                     <constraint firstAttribute="height" constant="55" id="VpW-Uq-zNE"/>
