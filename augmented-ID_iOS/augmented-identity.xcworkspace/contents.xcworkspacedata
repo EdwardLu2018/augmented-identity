@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:augmented-identity/Storyboards/Base.lproj/Content.storyboard">
+   </FileRef>
+   <FileRef
       location = "group:augmented-identity.xcodeproj">
    </FileRef>
    <FileRef
