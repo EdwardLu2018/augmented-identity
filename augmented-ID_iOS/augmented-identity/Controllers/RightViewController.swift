@@ -10,7 +10,8 @@ import UIKit
 import Firebase
 
 class RightViewController: UIViewController, UITextFieldDelegate {
-
+    
+    @IBOutlet weak var titleTextField: UILabel!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var majorTextField: UITextField!
@@ -61,6 +62,7 @@ class RightViewController: UIViewController, UITextFieldDelegate {
             self.skill3TextField.text = (value?["skill3"] as? String ?? "N/A").trimmingCharacters(in: .whitespaces)
             self.skill4TextField.text = (value?["skill4"] as? String ?? "N/A").trimmingCharacters(in: .whitespaces)
             self.skill5TextField.text = (value?["skill5"] as? String ?? "N/A").trimmingCharacters(in: .whitespaces)
+            self.titleTextField.text = "\(self.firstNameTextField.text != "N/A" ? self.firstNameTextField.text! + "'s" : "Your") Portfolio"
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -88,6 +90,7 @@ class RightViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func firstNameEditingChanged(_ sender: Any) {
         self.ref.child("users/\(self.userID!)/firstName").setValue(self.firstNameTextField.text)
+        self.titleTextField.text = "\(self.firstNameTextField.text != "" ? self.firstNameTextField.text! + "'s" : "Your") Portfolio"
     }
     
     @IBAction func lastNameEditingChanged(_ sender: Any) {
