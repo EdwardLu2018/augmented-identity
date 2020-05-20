@@ -1,6 +1,0 @@
-framework module Pods_augmented_identity {
-  umbrella header "Pods-augmented-identity-umbrella.h"
-
-  export *
-  module * { export * }
-}
